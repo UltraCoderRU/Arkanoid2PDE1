@@ -1,0 +1,120 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+# Date created = 14:07:51  October 21, 2009
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		myArkanoid_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C20F484C7
+set_global_assignment -name TOP_LEVEL_ENTITY TotalScheme
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.0 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:07:51  OCTOBER 21, 2009"
+set_global_assignment -name LAST_QUARTUS_VERSION 9.1
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_location_assignment PIN_L1 -to clk_50MHz
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC_FOR_AREA OFF
+set_global_assignment -name PHYSICAL_SYNTHESIS_MAP_LOGIC_TO_MEMORY_FOR_AREA OFF
+set_global_assignment -name STRATIX_CONFIGURATION_DEVICE AUTO
+set_location_assignment PIN_J2 -to led1[0]
+set_location_assignment PIN_J1 -to led1[1]
+set_location_assignment PIN_H2 -to led1[2]
+set_location_assignment PIN_H1 -to led1[3]
+set_location_assignment PIN_F2 -to led1[4]
+set_location_assignment PIN_F1 -to led1[5]
+set_location_assignment PIN_E2 -to led1[6]
+set_location_assignment PIN_E1 -to led2[0]
+set_location_assignment PIN_H6 -to led2[1]
+set_location_assignment PIN_H5 -to led2[2]
+set_location_assignment PIN_H4 -to led2[3]
+set_location_assignment PIN_G3 -to led2[4]
+set_location_assignment PIN_D2 -to led2[5]
+set_location_assignment PIN_D1 -to led2[6]
+set_location_assignment PIN_G5 -to led3[0]
+set_location_assignment PIN_G6 -to led3[1]
+set_location_assignment PIN_C2 -to led3[2]
+set_location_assignment PIN_C1 -to led3[3]
+set_location_assignment PIN_E3 -to led3[4]
+set_location_assignment PIN_E4 -to led3[5]
+set_location_assignment PIN_D3 -to led3[6]
+set_location_assignment PIN_F4 -to led4[0]
+set_location_assignment PIN_D5 -to led4[1]
+set_location_assignment PIN_D6 -to led4[2]
+set_location_assignment PIN_J4 -to led4[3]
+set_location_assignment PIN_L8 -to led4[4]
+set_location_assignment PIN_F3 -to led4[5]
+set_location_assignment PIN_D4 -to led4[6]
+set_global_assignment -name MISC_FILE "C:/Users/ProGOLD/Desktop/Политех/Altera DE1/myArkanoid/myArkanoid.dpf"
+set_location_assignment PIN_D9 -to red[0]
+set_location_assignment PIN_C9 -to red[1]
+set_location_assignment PIN_A7 -to red[2]
+set_location_assignment PIN_B7 -to red[3]
+set_location_assignment PIN_B8 -to green[0]
+set_location_assignment PIN_C10 -to green[1]
+set_location_assignment PIN_B9 -to green[2]
+set_location_assignment PIN_A8 -to green[3]
+set_location_assignment PIN_A9 -to blue[0]
+set_location_assignment PIN_D11 -to blue[1]
+set_location_assignment PIN_A10 -to blue[2]
+set_location_assignment PIN_B10 -to blue[3]
+set_location_assignment PIN_T21 -to button1
+set_location_assignment PIN_T22 -to button2
+set_location_assignment PIN_R21 -to button3
+set_location_assignment PIN_R22 -to button4
+set_location_assignment PIN_A11 -to h_sync
+set_location_assignment PIN_B11 -to v_sync
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name MISC_FILE "C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.dpf"
+set_global_assignment -name BDF_FILE TotalScheme.bdf
+set_global_assignment -name VERILOG_FILE Arkanoid.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE myArkanoid.vwf
+set_global_assignment -name SIMULATION_MODE TIMING
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE myArkanoid.vwf
+set_location_assignment PIN_U22 -to led[0]
+set_location_assignment PIN_U21 -to led[1]
+set_location_assignment PIN_V22 -to led[2]
+set_location_assignment PIN_V21 -to led[3]
+set_location_assignment PIN_W22 -to led[4]
+set_location_assignment PIN_W21 -to led[5]
+set_location_assignment PIN_Y22 -to led[6]
+set_location_assignment PIN_Y21 -to led[7]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

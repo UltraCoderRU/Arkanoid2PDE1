@@ -1,0 +1,1169 @@
+Classic Timing Analyzer report for myArkanoid
+Mon May 21 19:54:43 2012
+Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk_50MHz'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                             ;
++------------------------------+-------+---------------+----------------------------------+----------------------------+--------------------------------------+------------+-----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                       ; To                                   ; From Clock ; To Clock  ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+----------------------------+--------------------------------------+------------+-----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 32.749 ns                        ; button3                    ; Arkanoid:inst|blue_[0]               ; --         ; clk_50MHz ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 15.668 ns                        ; Arkanoid:inst|v_counter[8] ; v_sync                               ; clk_50MHz  ; --        ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -2.062 ns                        ; button2                    ; Arkanoid:inst|platform1_position[29] ; --         ; clk_50MHz ; 0            ;
+; Clock Setup: 'clk_50MHz'     ; N/A   ; None          ; 9.70 MHz ( period = 103.135 ns ) ; Arkanoid:inst|h_counter[1] ; Arkanoid:inst|blue_[0]               ; clk_50MHz  ; clk_50MHz ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                            ;                                      ;            ;           ; 0            ;
++------------------------------+-------+---------------+----------------------------------+----------------------------+--------------------------------------+------------+-----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk_50MHz       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk_50MHz'                                                                                                                                                                                                                                           ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------+-------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                        ; To                      ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------+-------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 9.70 MHz ( period = 103.135 ns )                    ; Arkanoid:inst|h_counter[1]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.875 ns              ;
+; N/A                                     ; 9.71 MHz ( period = 102.993 ns )                    ; Arkanoid:inst|h_counter[1]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.733 ns              ;
+; N/A                                     ; 9.71 MHz ( period = 102.991 ns )                    ; Arkanoid:inst|h_counter[1]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.731 ns              ;
+; N/A                                     ; 9.71 MHz ( period = 102.941 ns )                    ; Arkanoid:inst|h_counter[1]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.681 ns              ;
+; N/A                                     ; 9.73 MHz ( period = 102.825 ns )                    ; Arkanoid:inst|h_counter[0]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.582 ns              ;
+; N/A                                     ; 9.73 MHz ( period = 102.761 ns )                    ; Arkanoid:inst|h_counter[2]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.518 ns              ;
+; N/A                                     ; 9.74 MHz ( period = 102.721 ns )                    ; Arkanoid:inst|h_counter[3]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.478 ns              ;
+; N/A                                     ; 9.74 MHz ( period = 102.683 ns )                    ; Arkanoid:inst|h_counter[0]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.440 ns              ;
+; N/A                                     ; 9.74 MHz ( period = 102.681 ns )                    ; Arkanoid:inst|h_counter[0]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.438 ns              ;
+; N/A                                     ; 9.74 MHz ( period = 102.631 ns )                    ; Arkanoid:inst|h_counter[0]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.388 ns              ;
+; N/A                                     ; 9.74 MHz ( period = 102.619 ns )                    ; Arkanoid:inst|h_counter[2]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.376 ns              ;
+; N/A                                     ; 9.74 MHz ( period = 102.617 ns )                    ; Arkanoid:inst|h_counter[2]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.374 ns              ;
+; N/A                                     ; 9.75 MHz ( period = 102.598 ns )                    ; Arkanoid:inst|h_counter[4]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.355 ns              ;
+; N/A                                     ; 9.75 MHz ( period = 102.579 ns )                    ; Arkanoid:inst|h_counter[3]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.336 ns              ;
+; N/A                                     ; 9.75 MHz ( period = 102.577 ns )                    ; Arkanoid:inst|h_counter[3]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.334 ns              ;
+; N/A                                     ; 9.75 MHz ( period = 102.567 ns )                    ; Arkanoid:inst|h_counter[2]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.324 ns              ;
+; N/A                                     ; 9.75 MHz ( period = 102.558 ns )                    ; Arkanoid:inst|h_counter[5]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.315 ns              ;
+; N/A                                     ; 9.75 MHz ( period = 102.527 ns )                    ; Arkanoid:inst|h_counter[3]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.284 ns              ;
+; N/A                                     ; 9.76 MHz ( period = 102.478 ns )                    ; Arkanoid:inst|h_counter[6]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.235 ns              ;
+; N/A                                     ; 9.76 MHz ( period = 102.456 ns )                    ; Arkanoid:inst|h_counter[4]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.213 ns              ;
+; N/A                                     ; 9.76 MHz ( period = 102.454 ns )                    ; Arkanoid:inst|h_counter[4]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.211 ns              ;
+; N/A                                     ; 9.76 MHz ( period = 102.416 ns )                    ; Arkanoid:inst|h_counter[5]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.173 ns              ;
+; N/A                                     ; 9.76 MHz ( period = 102.414 ns )                    ; Arkanoid:inst|h_counter[5]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.171 ns              ;
+; N/A                                     ; 9.77 MHz ( period = 102.404 ns )                    ; Arkanoid:inst|h_counter[4]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.161 ns              ;
+; N/A                                     ; 9.77 MHz ( period = 102.365 ns )                    ; Arkanoid:inst|h_counter[7]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.122 ns              ;
+; N/A                                     ; 9.77 MHz ( period = 102.364 ns )                    ; Arkanoid:inst|h_counter[5]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.121 ns              ;
+; N/A                                     ; 9.77 MHz ( period = 102.336 ns )                    ; Arkanoid:inst|h_counter[6]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.093 ns              ;
+; N/A                                     ; 9.77 MHz ( period = 102.334 ns )                    ; Arkanoid:inst|h_counter[6]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.091 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.296 ns )                    ; Arkanoid:inst|h_counter[1]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.036 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.294 ns )                    ; Arkanoid:inst|h_counter[1]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.034 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.293 ns )                    ; Arkanoid:inst|h_counter[1]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.033 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.290 ns )                    ; Arkanoid:inst|h_counter[1]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.030 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.284 ns )                    ; Arkanoid:inst|h_counter[6]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.041 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.254 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 102.007 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.223 ns )                    ; Arkanoid:inst|h_counter[7]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.980 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.221 ns )                    ; Arkanoid:inst|h_counter[7]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.978 ns              ;
+; N/A                                     ; 9.78 MHz ( period = 102.219 ns )                    ; Arkanoid:inst|h_counter[8]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.976 ns              ;
+; N/A                                     ; 9.79 MHz ( period = 102.182 ns )                    ; Arkanoid:inst|v_counter[2]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.935 ns              ;
+; N/A                                     ; 9.79 MHz ( period = 102.171 ns )                    ; Arkanoid:inst|h_counter[7]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.928 ns              ;
+; N/A                                     ; 9.79 MHz ( period = 102.147 ns )                    ; Arkanoid:inst|v_counter[3]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.900 ns              ;
+; N/A                                     ; 9.79 MHz ( period = 102.102 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.855 ns              ;
+; N/A                                     ; 9.79 MHz ( period = 102.095 ns )                    ; Arkanoid:inst|h_counter[9]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.852 ns              ;
+; N/A                                     ; 9.80 MHz ( period = 102.077 ns )                    ; Arkanoid:inst|h_counter[8]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.834 ns              ;
+; N/A                                     ; 9.80 MHz ( period = 102.075 ns )                    ; Arkanoid:inst|h_counter[8]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.832 ns              ;
+; N/A                                     ; 9.80 MHz ( period = 102.060 ns )                    ; Arkanoid:inst|h_counter[10] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.817 ns              ;
+; N/A                                     ; 9.80 MHz ( period = 102.049 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.802 ns              ;
+; N/A                                     ; 9.80 MHz ( period = 102.030 ns )                    ; Arkanoid:inst|v_counter[2]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.783 ns              ;
+; N/A                                     ; 9.80 MHz ( period = 102.025 ns )                    ; Arkanoid:inst|h_counter[8]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.782 ns              ;
+; N/A                                     ; 9.80 MHz ( period = 102.023 ns )                    ; Arkanoid:inst|v_counter[4]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.776 ns              ;
+; N/A                                     ; 9.80 MHz ( period = 101.995 ns )                    ; Arkanoid:inst|v_counter[3]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.748 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.987 ns )                    ; Arkanoid:inst|v_counter[5]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.740 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.986 ns )                    ; Arkanoid:inst|h_counter[0]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.743 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.984 ns )                    ; Arkanoid:inst|h_counter[0]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.741 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.983 ns )                    ; Arkanoid:inst|h_counter[0]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.740 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.980 ns )                    ; Arkanoid:inst|h_counter[0]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.737 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.977 ns )                    ; Arkanoid:inst|v_counter[2]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.730 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.953 ns )                    ; Arkanoid:inst|h_counter[9]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.710 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.951 ns )                    ; Arkanoid:inst|h_counter[9]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.708 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.942 ns )                    ; Arkanoid:inst|v_counter[3]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.695 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.935 ns )                    ; Arkanoid:inst|h_counter[11] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.692 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.922 ns )                    ; Arkanoid:inst|h_counter[2]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.679 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.920 ns )                    ; Arkanoid:inst|h_counter[2]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.677 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.919 ns )                    ; Arkanoid:inst|h_counter[2]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.676 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.918 ns )                    ; Arkanoid:inst|h_counter[10] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.675 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.916 ns )                    ; Arkanoid:inst|h_counter[10] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.673 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.916 ns )                    ; Arkanoid:inst|h_counter[2]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.673 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.910 ns )                    ; Arkanoid:inst|v_counter[6]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.663 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.901 ns )                    ; Arkanoid:inst|h_counter[9]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.658 ns              ;
+; N/A                                     ; 9.81 MHz ( period = 101.900 ns )                    ; Arkanoid:inst|h_counter[12] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.657 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.882 ns )                    ; Arkanoid:inst|h_counter[3]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.639 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.880 ns )                    ; Arkanoid:inst|h_counter[3]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.637 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.879 ns )                    ; Arkanoid:inst|h_counter[3]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.636 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.876 ns )                    ; Arkanoid:inst|h_counter[3]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.633 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.871 ns )                    ; Arkanoid:inst|v_counter[4]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.624 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.866 ns )                    ; Arkanoid:inst|h_counter[10] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.623 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.835 ns )                    ; Arkanoid:inst|v_counter[5]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.588 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.818 ns )                    ; Arkanoid:inst|v_counter[4]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.571 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.796 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.549 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.793 ns )                    ; Arkanoid:inst|h_counter[11] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.550 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.791 ns )                    ; Arkanoid:inst|h_counter[11] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.548 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.790 ns )                    ; Arkanoid:inst|v_counter[7]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.543 ns              ;
+; N/A                                     ; 9.82 MHz ( period = 101.782 ns )                    ; Arkanoid:inst|v_counter[5]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.535 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.780 ns )                    ; Arkanoid:inst|h_counter[13] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.537 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.759 ns )                    ; Arkanoid:inst|h_counter[4]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.516 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.758 ns )                    ; Arkanoid:inst|v_counter[6]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.511 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.758 ns )                    ; Arkanoid:inst|h_counter[12] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.515 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.757 ns )                    ; Arkanoid:inst|h_counter[4]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.514 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.756 ns )                    ; Arkanoid:inst|h_counter[12] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.513 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.756 ns )                    ; Arkanoid:inst|h_counter[4]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.513 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.753 ns )                    ; Arkanoid:inst|h_counter[4]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.510 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.741 ns )                    ; Arkanoid:inst|h_counter[11] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.498 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.724 ns )                    ; Arkanoid:inst|v_counter[2]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.477 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.719 ns )                    ; Arkanoid:inst|h_counter[5]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.476 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.717 ns )                    ; Arkanoid:inst|h_counter[5]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.474 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.716 ns )                    ; Arkanoid:inst|h_counter[5]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.473 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.713 ns )                    ; Arkanoid:inst|h_counter[5]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.470 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.706 ns )                    ; Arkanoid:inst|h_counter[12] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.463 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.705 ns )                    ; Arkanoid:inst|v_counter[6]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.458 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.700 ns )                    ; Arkanoid:inst|h_counter[14] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.457 ns              ;
+; N/A                                     ; 9.83 MHz ( period = 101.689 ns )                    ; Arkanoid:inst|v_counter[3]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.442 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.648 ns )                    ; Arkanoid:inst|v_counter[8]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.401 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.639 ns )                    ; Arkanoid:inst|h_counter[6]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.396 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.639 ns )                    ; Arkanoid:inst|h_counter[15] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.396 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.638 ns )                    ; Arkanoid:inst|v_counter[7]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.391 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.638 ns )                    ; Arkanoid:inst|h_counter[13] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.395 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.637 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|blue_[2]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.390 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.637 ns )                    ; Arkanoid:inst|h_counter[6]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.394 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.636 ns )                    ; Arkanoid:inst|h_counter[13] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.393 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.636 ns )                    ; Arkanoid:inst|h_counter[6]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.393 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.633 ns )                    ; Arkanoid:inst|h_counter[6]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.390 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.586 ns )                    ; Arkanoid:inst|h_counter[13] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.343 ns              ;
+; N/A                                     ; 9.84 MHz ( period = 101.585 ns )                    ; Arkanoid:inst|v_counter[7]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.338 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.565 ns )                    ; Arkanoid:inst|v_counter[2]  ; Arkanoid:inst|blue_[2]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.318 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.565 ns )                    ; Arkanoid:inst|v_counter[4]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.318 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.558 ns )                    ; Arkanoid:inst|h_counter[14] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.315 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.556 ns )                    ; Arkanoid:inst|h_counter[14] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.313 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.530 ns )                    ; Arkanoid:inst|v_counter[3]  ; Arkanoid:inst|blue_[2]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.283 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.529 ns )                    ; Arkanoid:inst|v_counter[5]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.282 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.526 ns )                    ; Arkanoid:inst|h_counter[7]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.283 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.524 ns )                    ; Arkanoid:inst|v_counter[9]  ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.277 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.524 ns )                    ; Arkanoid:inst|h_counter[7]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.281 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.523 ns )                    ; Arkanoid:inst|h_counter[7]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.280 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.520 ns )                    ; Arkanoid:inst|h_counter[7]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.277 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.506 ns )                    ; Arkanoid:inst|h_counter[14] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.263 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.497 ns )                    ; Arkanoid:inst|h_counter[15] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.254 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.496 ns )                    ; Arkanoid:inst|v_counter[8]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.249 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.495 ns )                    ; Arkanoid:inst|h_counter[15] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.252 ns              ;
+; N/A                                     ; 9.85 MHz ( period = 101.489 ns )                    ; Arkanoid:inst|v_counter[10] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.242 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.452 ns )                    ; Arkanoid:inst|v_counter[6]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.205 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.447 ns )                    ; Arkanoid:inst|h_counter[16] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.207 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.445 ns )                    ; Arkanoid:inst|h_counter[15] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.202 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.443 ns )                    ; Arkanoid:inst|v_counter[8]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.196 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.415 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.168 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.406 ns )                    ; Arkanoid:inst|v_counter[4]  ; Arkanoid:inst|blue_[2]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.159 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.404 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.157 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.402 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.155 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.380 ns )                    ; Arkanoid:inst|h_counter[8]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.137 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.378 ns )                    ; Arkanoid:inst|h_counter[8]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.135 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.377 ns )                    ; Arkanoid:inst|h_counter[8]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.134 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.374 ns )                    ; Arkanoid:inst|h_counter[17] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.134 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.374 ns )                    ; Arkanoid:inst|h_counter[8]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.131 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.372 ns )                    ; Arkanoid:inst|v_counter[9]  ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.125 ns              ;
+; N/A                                     ; 9.86 MHz ( period = 101.370 ns )                    ; Arkanoid:inst|v_counter[5]  ; Arkanoid:inst|blue_[2]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.123 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.364 ns )                    ; Arkanoid:inst|v_counter[11] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.117 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.343 ns )                    ; Arkanoid:inst|v_counter[2]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.096 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.337 ns )                    ; Arkanoid:inst|v_counter[10] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.090 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.332 ns )                    ; Arkanoid:inst|v_counter[2]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.085 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.332 ns )                    ; Arkanoid:inst|v_counter[7]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.085 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.330 ns )                    ; Arkanoid:inst|v_counter[2]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.083 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.329 ns )                    ; Arkanoid:inst|v_counter[12] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.082 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.319 ns )                    ; Arkanoid:inst|v_counter[9]  ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.072 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.308 ns )                    ; Arkanoid:inst|v_counter[3]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.061 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.305 ns )                    ; Arkanoid:inst|h_counter[16] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.065 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.303 ns )                    ; Arkanoid:inst|h_counter[16] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.063 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.297 ns )                    ; Arkanoid:inst|v_counter[3]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.050 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.295 ns )                    ; Arkanoid:inst|h_counter[18] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.055 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.295 ns )                    ; Arkanoid:inst|v_counter[3]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.048 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.293 ns )                    ; Arkanoid:inst|v_counter[6]  ; Arkanoid:inst|blue_[2]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.046 ns              ;
+; N/A                                     ; 9.87 MHz ( period = 101.284 ns )                    ; Arkanoid:inst|v_counter[10] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.037 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.256 ns )                    ; Arkanoid:inst|h_counter[9]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.013 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.256 ns )                    ; Arkanoid:inst|h_counter[19] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.016 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.254 ns )                    ; Arkanoid:inst|h_counter[9]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.011 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.253 ns )                    ; Arkanoid:inst|h_counter[9]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.010 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.253 ns )                    ; Arkanoid:inst|h_counter[16] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.013 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.250 ns )                    ; Arkanoid:inst|h_counter[9]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 101.007 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.232 ns )                    ; Arkanoid:inst|h_counter[17] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.992 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.230 ns )                    ; Arkanoid:inst|h_counter[17] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.990 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.221 ns )                    ; Arkanoid:inst|h_counter[10] ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.978 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.219 ns )                    ; Arkanoid:inst|h_counter[10] ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.976 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.218 ns )                    ; Arkanoid:inst|h_counter[10] ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.975 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.215 ns )                    ; Arkanoid:inst|h_counter[10] ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.972 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.212 ns )                    ; Arkanoid:inst|v_counter[11] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.965 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.209 ns )                    ; Arkanoid:inst|v_counter[13] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.962 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.190 ns )                    ; Arkanoid:inst|v_counter[8]  ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.943 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.184 ns )                    ; Arkanoid:inst|v_counter[4]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.937 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.180 ns )                    ; Arkanoid:inst|h_counter[17] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.940 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.177 ns )                    ; Arkanoid:inst|v_counter[12] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.930 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.173 ns )                    ; Arkanoid:inst|v_counter[7]  ; Arkanoid:inst|blue_[2]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.926 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.173 ns )                    ; Arkanoid:inst|v_counter[4]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.926 ns              ;
+; N/A                                     ; 9.88 MHz ( period = 101.171 ns )                    ; Arkanoid:inst|v_counter[4]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.924 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.159 ns )                    ; Arkanoid:inst|v_counter[11] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.912 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.153 ns )                    ; Arkanoid:inst|h_counter[18] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.913 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.151 ns )                    ; Arkanoid:inst|h_counter[18] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.911 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.148 ns )                    ; Arkanoid:inst|v_counter[5]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.901 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.137 ns )                    ; Arkanoid:inst|v_counter[5]  ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.890 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.136 ns )                    ; Arkanoid:inst|h_counter[20] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.896 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.135 ns )                    ; Arkanoid:inst|v_counter[5]  ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.888 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.129 ns )                    ; Arkanoid:inst|v_counter[14] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.882 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.124 ns )                    ; Arkanoid:inst|v_counter[12] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.877 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.114 ns )                    ; Arkanoid:inst|h_counter[19] ; Arkanoid:inst|red_[1]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.874 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.112 ns )                    ; Arkanoid:inst|h_counter[19] ; Arkanoid:inst|green_[3] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.872 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.101 ns )                    ; Arkanoid:inst|h_counter[18] ; Arkanoid:inst|red_[3]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.861 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.096 ns )                    ; Arkanoid:inst|h_counter[11] ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.853 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.096 ns )                    ; Arkanoid:inst|h_counter[21] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.856 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.094 ns )                    ; Arkanoid:inst|h_counter[11] ; Arkanoid:inst|red_[2]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.851 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.093 ns )                    ; Arkanoid:inst|h_counter[11] ; Arkanoid:inst|green_[2] ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.850 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.093 ns )                    ; Arkanoid:inst|v_counter[1]  ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.846 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.090 ns )                    ; Arkanoid:inst|h_counter[11] ; Arkanoid:inst|red_[0]   ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.847 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.071 ns )                    ; Arkanoid:inst|v_counter[6]  ; Arkanoid:inst|blue_[3]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.824 ns              ;
+; N/A                                     ; 9.89 MHz ( period = 101.068 ns )                    ; Arkanoid:inst|v_counter[15] ; Arkanoid:inst|blue_[0]  ; clk_50MHz  ; clk_50MHz ; None                        ; None                      ; 100.821 ns              ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                             ;                         ;            ;           ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------------+-------------------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; tsu                                                                                            ;
++-------+--------------+------------+---------+--------------------------------------+-----------+
+; Slack ; Required tsu ; Actual tsu ; From    ; To                                   ; To Clock  ;
++-------+--------------+------------+---------+--------------------------------------+-----------+
+; N/A   ; None         ; 32.749 ns  ; button3 ; Arkanoid:inst|blue_[0]               ; clk_50MHz ;
+; N/A   ; None         ; 32.607 ns  ; button3 ; Arkanoid:inst|red_[1]                ; clk_50MHz ;
+; N/A   ; None         ; 32.604 ns  ; button3 ; Arkanoid:inst|green_[3]              ; clk_50MHz ;
+; N/A   ; None         ; 32.586 ns  ; button3 ; Arkanoid:inst|red_[3]                ; clk_50MHz ;
+; N/A   ; None         ; 31.939 ns  ; button3 ; Arkanoid:inst|red_[2]                ; clk_50MHz ;
+; N/A   ; None         ; 31.910 ns  ; button3 ; Arkanoid:inst|blue_[3]               ; clk_50MHz ;
+; N/A   ; None         ; 31.906 ns  ; button3 ; Arkanoid:inst|green_[2]              ; clk_50MHz ;
+; N/A   ; None         ; 31.904 ns  ; button3 ; Arkanoid:inst|red_[0]                ; clk_50MHz ;
+; N/A   ; None         ; 31.598 ns  ; button1 ; Arkanoid:inst|blue_[0]               ; clk_50MHz ;
+; N/A   ; None         ; 31.456 ns  ; button1 ; Arkanoid:inst|red_[1]                ; clk_50MHz ;
+; N/A   ; None         ; 31.454 ns  ; button1 ; Arkanoid:inst|green_[3]              ; clk_50MHz ;
+; N/A   ; None         ; 31.404 ns  ; button1 ; Arkanoid:inst|red_[3]                ; clk_50MHz ;
+; N/A   ; None         ; 30.759 ns  ; button1 ; Arkanoid:inst|blue_[3]               ; clk_50MHz ;
+; N/A   ; None         ; 30.757 ns  ; button1 ; Arkanoid:inst|red_[2]                ; clk_50MHz ;
+; N/A   ; None         ; 30.756 ns  ; button1 ; Arkanoid:inst|green_[2]              ; clk_50MHz ;
+; N/A   ; None         ; 30.753 ns  ; button1 ; Arkanoid:inst|red_[0]                ; clk_50MHz ;
+; N/A   ; None         ; 20.225 ns  ; button4 ; Arkanoid:inst|blue_[0]               ; clk_50MHz ;
+; N/A   ; None         ; 20.083 ns  ; button4 ; Arkanoid:inst|red_[1]                ; clk_50MHz ;
+; N/A   ; None         ; 20.080 ns  ; button4 ; Arkanoid:inst|green_[3]              ; clk_50MHz ;
+; N/A   ; None         ; 20.062 ns  ; button4 ; Arkanoid:inst|red_[3]                ; clk_50MHz ;
+; N/A   ; None         ; 19.573 ns  ; button2 ; Arkanoid:inst|blue_[0]               ; clk_50MHz ;
+; N/A   ; None         ; 19.431 ns  ; button2 ; Arkanoid:inst|red_[1]                ; clk_50MHz ;
+; N/A   ; None         ; 19.429 ns  ; button2 ; Arkanoid:inst|green_[3]              ; clk_50MHz ;
+; N/A   ; None         ; 19.415 ns  ; button4 ; Arkanoid:inst|red_[2]                ; clk_50MHz ;
+; N/A   ; None         ; 19.386 ns  ; button4 ; Arkanoid:inst|blue_[3]               ; clk_50MHz ;
+; N/A   ; None         ; 19.382 ns  ; button4 ; Arkanoid:inst|green_[2]              ; clk_50MHz ;
+; N/A   ; None         ; 19.380 ns  ; button4 ; Arkanoid:inst|red_[0]                ; clk_50MHz ;
+; N/A   ; None         ; 19.379 ns  ; button2 ; Arkanoid:inst|red_[3]                ; clk_50MHz ;
+; N/A   ; None         ; 18.801 ns  ; button3 ; Arkanoid:inst|platform2_position[31] ; clk_50MHz ;
+; N/A   ; None         ; 18.734 ns  ; button2 ; Arkanoid:inst|blue_[3]               ; clk_50MHz ;
+; N/A   ; None         ; 18.732 ns  ; button2 ; Arkanoid:inst|red_[2]                ; clk_50MHz ;
+; N/A   ; None         ; 18.731 ns  ; button2 ; Arkanoid:inst|green_[2]              ; clk_50MHz ;
+; N/A   ; None         ; 18.728 ns  ; button2 ; Arkanoid:inst|red_[0]                ; clk_50MHz ;
+; N/A   ; None         ; 18.157 ns  ; button3 ; Arkanoid:inst|platform2_position[29] ; clk_50MHz ;
+; N/A   ; None         ; 18.002 ns  ; button3 ; Arkanoid:inst|platform2_position[30] ; clk_50MHz ;
+; N/A   ; None         ; 17.989 ns  ; button3 ; Arkanoid:inst|platform2_position[26] ; clk_50MHz ;
+; N/A   ; None         ; 17.655 ns  ; button3 ; Arkanoid:inst|platform2_position[27] ; clk_50MHz ;
+; N/A   ; None         ; 17.436 ns  ; button3 ; Arkanoid:inst|platform2_position[28] ; clk_50MHz ;
+; N/A   ; None         ; 17.284 ns  ; button3 ; Arkanoid:inst|platform2_position[25] ; clk_50MHz ;
+; N/A   ; None         ; 17.269 ns  ; button3 ; Arkanoid:inst|platform2_position[19] ; clk_50MHz ;
+; N/A   ; None         ; 17.135 ns  ; button3 ; Arkanoid:inst|platform2_position[24] ; clk_50MHz ;
+; N/A   ; None         ; 17.109 ns  ; button3 ; Arkanoid:inst|platform2_position[17] ; clk_50MHz ;
+; N/A   ; None         ; 17.001 ns  ; button3 ; Arkanoid:inst|platform2_position[14] ; clk_50MHz ;
+; N/A   ; None         ; 16.961 ns  ; button3 ; Arkanoid:inst|platform2_position[20] ; clk_50MHz ;
+; N/A   ; None         ; 16.884 ns  ; button1 ; Arkanoid:inst|platform1_position[25] ; clk_50MHz ;
+; N/A   ; None         ; 16.862 ns  ; button3 ; Arkanoid:inst|platform2_position[3]  ; clk_50MHz ;
+; N/A   ; None         ; 16.851 ns  ; button3 ; Arkanoid:inst|platform2_position[22] ; clk_50MHz ;
+; N/A   ; None         ; 16.816 ns  ; button1 ; Arkanoid:inst|platform1_position[30] ; clk_50MHz ;
+; N/A   ; None         ; 16.816 ns  ; button3 ; Arkanoid:inst|platform2_position[18] ; clk_50MHz ;
+; N/A   ; None         ; 16.770 ns  ; button3 ; Arkanoid:inst|platform2_position[23] ; clk_50MHz ;
+; N/A   ; None         ; 16.703 ns  ; button3 ; Arkanoid:inst|platform2_position[16] ; clk_50MHz ;
+; N/A   ; None         ; 16.671 ns  ; button1 ; Arkanoid:inst|platform1_position[29] ; clk_50MHz ;
+; N/A   ; None         ; 16.468 ns  ; button1 ; Arkanoid:inst|platform1_position[27] ; clk_50MHz ;
+; N/A   ; None         ; 16.439 ns  ; button3 ; Arkanoid:inst|platform2_position[21] ; clk_50MHz ;
+; N/A   ; None         ; 16.357 ns  ; button3 ; Arkanoid:inst|platform2_position[12] ; clk_50MHz ;
+; N/A   ; None         ; 16.299 ns  ; button1 ; Arkanoid:inst|platform1_position[28] ; clk_50MHz ;
+; N/A   ; None         ; 16.240 ns  ; button3 ; Arkanoid:inst|platform2_position[11] ; clk_50MHz ;
+; N/A   ; None         ; 16.228 ns  ; button3 ; Arkanoid:inst|platform2_position[8]  ; clk_50MHz ;
+; N/A   ; None         ; 16.217 ns  ; button3 ; Arkanoid:inst|platform2_position[13] ; clk_50MHz ;
+; N/A   ; None         ; 16.213 ns  ; button1 ; Arkanoid:inst|platform1_position[31] ; clk_50MHz ;
+; N/A   ; None         ; 16.158 ns  ; button3 ; Arkanoid:inst|platform2_position[15] ; clk_50MHz ;
+; N/A   ; None         ; 16.144 ns  ; button3 ; Arkanoid:inst|platform2_position[9]  ; clk_50MHz ;
+; N/A   ; None         ; 16.134 ns  ; button3 ; Arkanoid:inst|platform2_position[10] ; clk_50MHz ;
+; N/A   ; None         ; 16.006 ns  ; button1 ; Arkanoid:inst|platform1_position[26] ; clk_50MHz ;
+; N/A   ; None         ; 15.993 ns  ; button1 ; Arkanoid:inst|platform1_position[22] ; clk_50MHz ;
+; N/A   ; None         ; 15.964 ns  ; button1 ; Arkanoid:inst|platform1_position[3]  ; clk_50MHz ;
+; N/A   ; None         ; 15.862 ns  ; button3 ; Arkanoid:inst|platform2_position[7]  ; clk_50MHz ;
+; N/A   ; None         ; 15.860 ns  ; button1 ; Arkanoid:inst|platform1_position[21] ; clk_50MHz ;
+; N/A   ; None         ; 15.852 ns  ; button1 ; Arkanoid:inst|platform1_position[24] ; clk_50MHz ;
+; N/A   ; None         ; 15.771 ns  ; button1 ; Arkanoid:inst|platform1_position[20] ; clk_50MHz ;
+; N/A   ; None         ; 15.740 ns  ; button3 ; Arkanoid:inst|platform2_position[6]  ; clk_50MHz ;
+; N/A   ; None         ; 15.701 ns  ; button1 ; Arkanoid:inst|platform1_position[23] ; clk_50MHz ;
+; N/A   ; None         ; 15.567 ns  ; button1 ; Arkanoid:inst|platform1_position[17] ; clk_50MHz ;
+; N/A   ; None         ; 15.411 ns  ; button1 ; Arkanoid:inst|platform1_position[19] ; clk_50MHz ;
+; N/A   ; None         ; 15.348 ns  ; button1 ; Arkanoid:inst|platform1_position[15] ; clk_50MHz ;
+; N/A   ; None         ; 15.341 ns  ; button3 ; Arkanoid:inst|platform2_position[2]  ; clk_50MHz ;
+; N/A   ; None         ; 15.268 ns  ; button3 ; Arkanoid:inst|platform2_position[5]  ; clk_50MHz ;
+; N/A   ; None         ; 15.264 ns  ; button3 ; Arkanoid:inst|platform2_position[4]  ; clk_50MHz ;
+; N/A   ; None         ; 15.131 ns  ; button1 ; Arkanoid:inst|platform1_position[18] ; clk_50MHz ;
+; N/A   ; None         ; 15.085 ns  ; button1 ; Arkanoid:inst|platform1_position[12] ; clk_50MHz ;
+; N/A   ; None         ; 14.969 ns  ; button1 ; Arkanoid:inst|platform1_position[16] ; clk_50MHz ;
+; N/A   ; None         ; 14.963 ns  ; button1 ; Arkanoid:inst|platform1_position[11] ; clk_50MHz ;
+; N/A   ; None         ; 14.880 ns  ; button1 ; Arkanoid:inst|platform1_position[10] ; clk_50MHz ;
+; N/A   ; None         ; 14.848 ns  ; button1 ; Arkanoid:inst|platform1_position[14] ; clk_50MHz ;
+; N/A   ; None         ; 14.827 ns  ; button1 ; Arkanoid:inst|platform1_position[9]  ; clk_50MHz ;
+; N/A   ; None         ; 14.770 ns  ; button1 ; Arkanoid:inst|platform1_position[13] ; clk_50MHz ;
+; N/A   ; None         ; 14.754 ns  ; button1 ; Arkanoid:inst|platform1_position[8]  ; clk_50MHz ;
+; N/A   ; None         ; 14.637 ns  ; button3 ; Arkanoid:inst|platform2_position[1]  ; clk_50MHz ;
+; N/A   ; None         ; 14.560 ns  ; button1 ; Arkanoid:inst|platform1_position[6]  ; clk_50MHz ;
+; N/A   ; None         ; 14.552 ns  ; button1 ; Arkanoid:inst|platform1_position[7]  ; clk_50MHz ;
+; N/A   ; None         ; 14.492 ns  ; button3 ; Arkanoid:inst|platform2_position[0]  ; clk_50MHz ;
+; N/A   ; None         ; 14.437 ns  ; button1 ; Arkanoid:inst|platform1_position[5]  ; clk_50MHz ;
+; N/A   ; None         ; 14.350 ns  ; button1 ; Arkanoid:inst|platform1_position[4]  ; clk_50MHz ;
+; N/A   ; None         ; 14.138 ns  ; button1 ; Arkanoid:inst|platform1_position[2]  ; clk_50MHz ;
+; N/A   ; None         ; 14.006 ns  ; button1 ; Arkanoid:inst|platform1_position[1]  ; clk_50MHz ;
+; N/A   ; None         ; 13.300 ns  ; button1 ; Arkanoid:inst|platform1_position[0]  ; clk_50MHz ;
+; N/A   ; None         ; 5.014 ns   ; button2 ; Arkanoid:inst|platform1_position[3]  ; clk_50MHz ;
+; N/A   ; None         ; 4.949 ns   ; button4 ; Arkanoid:inst|led_[1]                ; clk_50MHz ;
+; N/A   ; None         ; 4.949 ns   ; button4 ; Arkanoid:inst|led_[0]                ; clk_50MHz ;
+; N/A   ; None         ; 4.904 ns   ; button4 ; Arkanoid:inst|platform2_position[3]  ; clk_50MHz ;
+; N/A   ; None         ; 4.602 ns   ; button4 ; Arkanoid:inst|button4_state          ; clk_50MHz ;
+; N/A   ; None         ; 3.879 ns   ; button2 ; Arkanoid:inst|button2_state          ; clk_50MHz ;
+; N/A   ; None         ; 3.879 ns   ; button2 ; Arkanoid:inst|led_[5]                ; clk_50MHz ;
+; N/A   ; None         ; 3.879 ns   ; button2 ; Arkanoid:inst|led_[4]                ; clk_50MHz ;
+; N/A   ; None         ; 3.628 ns   ; button4 ; Arkanoid:inst|platform2_position[31] ; clk_50MHz ;
+; N/A   ; None         ; 3.627 ns   ; button4 ; Arkanoid:inst|platform2_position[12] ; clk_50MHz ;
+; N/A   ; None         ; 3.625 ns   ; button4 ; Arkanoid:inst|platform2_position[11] ; clk_50MHz ;
+; N/A   ; None         ; 3.599 ns   ; button3 ; Arkanoid:inst|button3_state          ; clk_50MHz ;
+; N/A   ; None         ; 3.599 ns   ; button3 ; Arkanoid:inst|led_[3]                ; clk_50MHz ;
+; N/A   ; None         ; 3.599 ns   ; button3 ; Arkanoid:inst|led_[2]                ; clk_50MHz ;
+; N/A   ; None         ; 3.574 ns   ; button4 ; Arkanoid:inst|platform2_position[10] ; clk_50MHz ;
+; N/A   ; None         ; 3.574 ns   ; button4 ; Arkanoid:inst|platform2_position[7]  ; clk_50MHz ;
+; N/A   ; None         ; 3.574 ns   ; button4 ; Arkanoid:inst|platform2_position[6]  ; clk_50MHz ;
+; N/A   ; None         ; 3.571 ns   ; button4 ; Arkanoid:inst|platform2_position[8]  ; clk_50MHz ;
+; N/A   ; None         ; 3.569 ns   ; button4 ; Arkanoid:inst|platform2_position[5]  ; clk_50MHz ;
+; N/A   ; None         ; 3.518 ns   ; button1 ; Arkanoid:inst|button1_state          ; clk_50MHz ;
+; N/A   ; None         ; 3.518 ns   ; button1 ; Arkanoid:inst|led_[7]                ; clk_50MHz ;
+; N/A   ; None         ; 3.518 ns   ; button1 ; Arkanoid:inst|led_[6]                ; clk_50MHz ;
+; N/A   ; None         ; 3.501 ns   ; button4 ; Arkanoid:inst|platform2_position[29] ; clk_50MHz ;
+; N/A   ; None         ; 3.305 ns   ; button4 ; Arkanoid:inst|platform2_position[20] ; clk_50MHz ;
+; N/A   ; None         ; 3.304 ns   ; button4 ; Arkanoid:inst|platform2_position[16] ; clk_50MHz ;
+; N/A   ; None         ; 3.303 ns   ; button4 ; Arkanoid:inst|platform2_position[19] ; clk_50MHz ;
+; N/A   ; None         ; 3.302 ns   ; button4 ; Arkanoid:inst|platform2_position[17] ; clk_50MHz ;
+; N/A   ; None         ; 3.301 ns   ; button4 ; Arkanoid:inst|platform2_position[15] ; clk_50MHz ;
+; N/A   ; None         ; 3.286 ns   ; button4 ; Arkanoid:inst|platform2_position[4]  ; clk_50MHz ;
+; N/A   ; None         ; 3.284 ns   ; button4 ; Arkanoid:inst|platform2_position[2]  ; clk_50MHz ;
+; N/A   ; None         ; 3.282 ns   ; button4 ; Arkanoid:inst|platform2_position[0]  ; clk_50MHz ;
+; N/A   ; None         ; 3.282 ns   ; button4 ; Arkanoid:inst|platform2_position[1]  ; clk_50MHz ;
+; N/A   ; None         ; 3.219 ns   ; button4 ; Arkanoid:inst|platform2_position[18] ; clk_50MHz ;
+; N/A   ; None         ; 3.218 ns   ; button4 ; Arkanoid:inst|platform2_position[30] ; clk_50MHz ;
+; N/A   ; None         ; 3.168 ns   ; button4 ; Arkanoid:inst|platform2_position[21] ; clk_50MHz ;
+; N/A   ; None         ; 3.165 ns   ; button4 ; Arkanoid:inst|platform2_position[27] ; clk_50MHz ;
+; N/A   ; None         ; 2.951 ns   ; button2 ; Arkanoid:inst|platform1_position[1]  ; clk_50MHz ;
+; N/A   ; None         ; 2.946 ns   ; button2 ; Arkanoid:inst|platform1_position[0]  ; clk_50MHz ;
+; N/A   ; None         ; 2.828 ns   ; button4 ; Arkanoid:inst|platform2_position[14] ; clk_50MHz ;
+; N/A   ; None         ; 2.828 ns   ; button4 ; Arkanoid:inst|platform2_position[13] ; clk_50MHz ;
+; N/A   ; None         ; 2.821 ns   ; button4 ; Arkanoid:inst|platform2_position[22] ; clk_50MHz ;
+; N/A   ; None         ; 2.820 ns   ; button4 ; Arkanoid:inst|platform2_position[9]  ; clk_50MHz ;
+; N/A   ; None         ; 2.819 ns   ; button4 ; Arkanoid:inst|platform2_position[26] ; clk_50MHz ;
+; N/A   ; None         ; 2.818 ns   ; button4 ; Arkanoid:inst|platform2_position[28] ; clk_50MHz ;
+; N/A   ; None         ; 2.818 ns   ; button4 ; Arkanoid:inst|platform2_position[23] ; clk_50MHz ;
+; N/A   ; None         ; 2.814 ns   ; button4 ; Arkanoid:inst|platform2_position[24] ; clk_50MHz ;
+; N/A   ; None         ; 2.813 ns   ; button4 ; Arkanoid:inst|platform2_position[25] ; clk_50MHz ;
+; N/A   ; None         ; 2.755 ns   ; button2 ; Arkanoid:inst|platform1_position[13] ; clk_50MHz ;
+; N/A   ; None         ; 2.755 ns   ; button2 ; Arkanoid:inst|platform1_position[14] ; clk_50MHz ;
+; N/A   ; None         ; 2.751 ns   ; button2 ; Arkanoid:inst|platform1_position[15] ; clk_50MHz ;
+; N/A   ; None         ; 2.706 ns   ; button2 ; Arkanoid:inst|platform1_position[21] ; clk_50MHz ;
+; N/A   ; None         ; 2.706 ns   ; button2 ; Arkanoid:inst|platform1_position[30] ; clk_50MHz ;
+; N/A   ; None         ; 2.705 ns   ; button2 ; Arkanoid:inst|platform1_position[25] ; clk_50MHz ;
+; N/A   ; None         ; 2.704 ns   ; button2 ; Arkanoid:inst|platform1_position[28] ; clk_50MHz ;
+; N/A   ; None         ; 2.702 ns   ; button2 ; Arkanoid:inst|platform1_position[23] ; clk_50MHz ;
+; N/A   ; None         ; 2.702 ns   ; button2 ; Arkanoid:inst|platform1_position[2]  ; clk_50MHz ;
+; N/A   ; None         ; 2.696 ns   ; button2 ; Arkanoid:inst|platform1_position[24] ; clk_50MHz ;
+; N/A   ; None         ; 2.693 ns   ; button2 ; Arkanoid:inst|platform1_position[26] ; clk_50MHz ;
+; N/A   ; None         ; 2.577 ns   ; button2 ; Arkanoid:inst|platform1_position[16] ; clk_50MHz ;
+; N/A   ; None         ; 2.575 ns   ; button2 ; Arkanoid:inst|platform1_position[19] ; clk_50MHz ;
+; N/A   ; None         ; 2.573 ns   ; button2 ; Arkanoid:inst|platform1_position[18] ; clk_50MHz ;
+; N/A   ; None         ; 2.573 ns   ; button2 ; Arkanoid:inst|platform1_position[17] ; clk_50MHz ;
+; N/A   ; None         ; 2.572 ns   ; button2 ; Arkanoid:inst|platform1_position[31] ; clk_50MHz ;
+; N/A   ; None         ; 2.572 ns   ; button2 ; Arkanoid:inst|platform1_position[20] ; clk_50MHz ;
+; N/A   ; None         ; 2.327 ns   ; button2 ; Arkanoid:inst|platform1_position[4]  ; clk_50MHz ;
+; N/A   ; None         ; 2.326 ns   ; button2 ; Arkanoid:inst|platform1_position[11] ; clk_50MHz ;
+; N/A   ; None         ; 2.325 ns   ; button2 ; Arkanoid:inst|platform1_position[6]  ; clk_50MHz ;
+; N/A   ; None         ; 2.324 ns   ; button2 ; Arkanoid:inst|platform1_position[7]  ; clk_50MHz ;
+; N/A   ; None         ; 2.322 ns   ; button2 ; Arkanoid:inst|platform1_position[10] ; clk_50MHz ;
+; N/A   ; None         ; 2.321 ns   ; button2 ; Arkanoid:inst|platform1_position[12] ; clk_50MHz ;
+; N/A   ; None         ; 2.320 ns   ; button2 ; Arkanoid:inst|platform1_position[5]  ; clk_50MHz ;
+; N/A   ; None         ; 2.318 ns   ; button2 ; Arkanoid:inst|platform1_position[22] ; clk_50MHz ;
+; N/A   ; None         ; 2.315 ns   ; button2 ; Arkanoid:inst|platform1_position[9]  ; clk_50MHz ;
+; N/A   ; None         ; 2.313 ns   ; button2 ; Arkanoid:inst|platform1_position[8]  ; clk_50MHz ;
+; N/A   ; None         ; 2.312 ns   ; button2 ; Arkanoid:inst|platform1_position[27] ; clk_50MHz ;
+; N/A   ; None         ; 2.310 ns   ; button2 ; Arkanoid:inst|platform1_position[29] ; clk_50MHz ;
++-------+--------------+------------+---------+--------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+-----------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                        ; To       ; From Clock ;
++-------+--------------+------------+-----------------------------+----------+------------+
+; N/A   ; None         ; 15.668 ns  ; Arkanoid:inst|v_counter[8]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 15.637 ns  ; Arkanoid:inst|v_counter[7]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 15.288 ns  ; Arkanoid:inst|h_counter[19] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 15.195 ns  ; Arkanoid:inst|h_counter[1]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 15.161 ns  ; Arkanoid:inst|v_counter[6]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.948 ns  ; Arkanoid:inst|v_counter[13] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.923 ns  ; Arkanoid:inst|v_counter[19] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.911 ns  ; Arkanoid:inst|v_counter[17] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.895 ns  ; Arkanoid:inst|v_counter[22] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.890 ns  ; Arkanoid:inst|v_counter[20] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.889 ns  ; Arkanoid:inst|v_counter[16] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.827 ns  ; Arkanoid:inst|v_counter[24] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.814 ns  ; Arkanoid:inst|v_counter[23] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.768 ns  ; Arkanoid:inst|v_counter[18] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.632 ns  ; Arkanoid:inst|v_counter[21] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.601 ns  ; Arkanoid:inst|h_counter[2]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.552 ns  ; Arkanoid:inst|v_counter[25] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.552 ns  ; Arkanoid:inst|h_counter[29] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.516 ns  ; Arkanoid:inst|v_counter[12] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.507 ns  ; Arkanoid:inst|v_counter[10] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.455 ns  ; Arkanoid:inst|h_counter[15] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.366 ns  ; Arkanoid:inst|v_counter[11] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.283 ns  ; Arkanoid:inst|h_counter[3]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.237 ns  ; Arkanoid:inst|h_counter[11] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.195 ns  ; Arkanoid:inst|h_counter[5]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.186 ns  ; Arkanoid:inst|v_counter[14] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.157 ns  ; Arkanoid:inst|h_counter[9]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.155 ns  ; Arkanoid:inst|h_counter[8]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.091 ns  ; Arkanoid:inst|v_counter[15] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 14.091 ns  ; Arkanoid:inst|h_counter[0]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.961 ns  ; Arkanoid:inst|v_counter[5]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.896 ns  ; Arkanoid:inst|h_counter[13] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.889 ns  ; Arkanoid:inst|h_counter[14] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.853 ns  ; Arkanoid:inst|v_counter[1]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.822 ns  ; Arkanoid:inst|h_counter[24] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.750 ns  ; Arkanoid:inst|h_counter[18] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.749 ns  ; Arkanoid:inst|h_counter[10] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.718 ns  ; Arkanoid:inst|h_counter[12] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.692 ns  ; Arkanoid:inst|h_counter[17] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.676 ns  ; Arkanoid:inst|h_counter[16] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.632 ns  ; Arkanoid:inst|v_counter[4]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.585 ns  ; Arkanoid:inst|h_counter[21] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.573 ns  ; Arkanoid:inst|h_counter[4]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.550 ns  ; Arkanoid:inst|h_counter[23] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.466 ns  ; Arkanoid:inst|v_counter[2]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.458 ns  ; Arkanoid:inst|h_counter[20] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.405 ns  ; Arkanoid:inst|v_counter[3]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.390 ns  ; Arkanoid:inst|h_counter[22] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.244 ns  ; Arkanoid:inst|h_counter[25] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.170 ns  ; Arkanoid:inst|h_counter[6]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.011 ns  ; Arkanoid:inst|v_counter[28] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 13.001 ns  ; Arkanoid:inst|v_counter[27] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.849 ns  ; Arkanoid:inst|v_counter[29] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.753 ns  ; Arkanoid:inst|v_counter[30] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.720 ns  ; Arkanoid:inst|v_counter[26] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.633 ns  ; Arkanoid:inst|h_counter[28] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.628 ns  ; Arkanoid:inst|h_counter[27] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.484 ns  ; Arkanoid:inst|v_counter[31] ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.352 ns  ; Arkanoid:inst|h_counter[26] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.262 ns  ; Arkanoid:inst|h_counter[30] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.173 ns  ; Arkanoid:inst|h_counter[31] ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 12.144 ns  ; Arkanoid:inst|h_counter[7]  ; h_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 11.917 ns  ; Arkanoid:inst|v_counter[9]  ; v_sync   ; clk_50MHz  ;
+; N/A   ; None         ; 10.989 ns  ; Arkanoid:inst|led_[5]       ; led[5]   ; clk_50MHz  ;
+; N/A   ; None         ; 10.915 ns  ; Arkanoid:inst|led_[3]       ; led[3]   ; clk_50MHz  ;
+; N/A   ; None         ; 10.702 ns  ; Arkanoid:inst|led_[1]       ; led[1]   ; clk_50MHz  ;
+; N/A   ; None         ; 10.550 ns  ; Arkanoid:inst|red_[0]       ; red[0]   ; clk_50MHz  ;
+; N/A   ; None         ; 10.523 ns  ; Arkanoid:inst|red_[3]       ; red[3]   ; clk_50MHz  ;
+; N/A   ; None         ; 10.519 ns  ; Arkanoid:inst|red_[2]       ; red[2]   ; clk_50MHz  ;
+; N/A   ; None         ; 10.386 ns  ; Arkanoid:inst|led_[4]       ; led[4]   ; clk_50MHz  ;
+; N/A   ; None         ; 10.275 ns  ; Arkanoid:inst|green_[3]     ; green[3] ; clk_50MHz  ;
+; N/A   ; None         ; 10.248 ns  ; Arkanoid:inst|blue_[0]      ; blue[0]  ; clk_50MHz  ;
+; N/A   ; None         ; 10.236 ns  ; Arkanoid:inst|green_[2]     ; green[2] ; clk_50MHz  ;
+; N/A   ; None         ; 10.139 ns  ; Arkanoid:inst|led_[6]       ; led[6]   ; clk_50MHz  ;
+; N/A   ; None         ; 10.073 ns  ; Arkanoid:inst|led_[2]       ; led[2]   ; clk_50MHz  ;
+; N/A   ; None         ; 9.936 ns   ; Arkanoid:inst|red_[1]       ; red[1]   ; clk_50MHz  ;
+; N/A   ; None         ; 9.867 ns   ; Arkanoid:inst|blue_[3]      ; blue[3]  ; clk_50MHz  ;
+; N/A   ; None         ; 9.866 ns   ; Arkanoid:inst|blue_[1]      ; blue[1]  ; clk_50MHz  ;
+; N/A   ; None         ; 9.794 ns   ; Arkanoid:inst|led_[7]       ; led[7]   ; clk_50MHz  ;
+; N/A   ; None         ; 9.722 ns   ; Arkanoid:inst|led_[0]       ; led[0]   ; clk_50MHz  ;
+; N/A   ; None         ; 9.635 ns   ; Arkanoid:inst|blue_[2]      ; blue[2]  ; clk_50MHz  ;
++-------+--------------+------------+-----------------------------+----------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; th                                                                                                    ;
++---------------+-------------+------------+---------+--------------------------------------+-----------+
+; Minimum Slack ; Required th ; Actual th  ; From    ; To                                   ; To Clock  ;
++---------------+-------------+------------+---------+--------------------------------------+-----------+
+; N/A           ; None        ; -2.062 ns  ; button2 ; Arkanoid:inst|platform1_position[29] ; clk_50MHz ;
+; N/A           ; None        ; -2.064 ns  ; button2 ; Arkanoid:inst|platform1_position[27] ; clk_50MHz ;
+; N/A           ; None        ; -2.065 ns  ; button2 ; Arkanoid:inst|platform1_position[8]  ; clk_50MHz ;
+; N/A           ; None        ; -2.067 ns  ; button2 ; Arkanoid:inst|platform1_position[9]  ; clk_50MHz ;
+; N/A           ; None        ; -2.070 ns  ; button2 ; Arkanoid:inst|platform1_position[22] ; clk_50MHz ;
+; N/A           ; None        ; -2.072 ns  ; button2 ; Arkanoid:inst|platform1_position[5]  ; clk_50MHz ;
+; N/A           ; None        ; -2.073 ns  ; button2 ; Arkanoid:inst|platform1_position[12] ; clk_50MHz ;
+; N/A           ; None        ; -2.074 ns  ; button2 ; Arkanoid:inst|platform1_position[10] ; clk_50MHz ;
+; N/A           ; None        ; -2.076 ns  ; button2 ; Arkanoid:inst|platform1_position[7]  ; clk_50MHz ;
+; N/A           ; None        ; -2.077 ns  ; button2 ; Arkanoid:inst|platform1_position[6]  ; clk_50MHz ;
+; N/A           ; None        ; -2.078 ns  ; button2 ; Arkanoid:inst|platform1_position[11] ; clk_50MHz ;
+; N/A           ; None        ; -2.079 ns  ; button2 ; Arkanoid:inst|platform1_position[4]  ; clk_50MHz ;
+; N/A           ; None        ; -2.146 ns  ; button1 ; Arkanoid:inst|led_[7]                ; clk_50MHz ;
+; N/A           ; None        ; -2.151 ns  ; button1 ; Arkanoid:inst|button1_state          ; clk_50MHz ;
+; N/A           ; None        ; -2.151 ns  ; button1 ; Arkanoid:inst|led_[6]                ; clk_50MHz ;
+; N/A           ; None        ; -2.324 ns  ; button2 ; Arkanoid:inst|platform1_position[31] ; clk_50MHz ;
+; N/A           ; None        ; -2.324 ns  ; button2 ; Arkanoid:inst|platform1_position[20] ; clk_50MHz ;
+; N/A           ; None        ; -2.325 ns  ; button2 ; Arkanoid:inst|platform1_position[18] ; clk_50MHz ;
+; N/A           ; None        ; -2.325 ns  ; button2 ; Arkanoid:inst|platform1_position[17] ; clk_50MHz ;
+; N/A           ; None        ; -2.327 ns  ; button2 ; Arkanoid:inst|platform1_position[19] ; clk_50MHz ;
+; N/A           ; None        ; -2.329 ns  ; button2 ; Arkanoid:inst|platform1_position[16] ; clk_50MHz ;
+; N/A           ; None        ; -2.421 ns  ; button3 ; Arkanoid:inst|led_[2]                ; clk_50MHz ;
+; N/A           ; None        ; -2.423 ns  ; button3 ; Arkanoid:inst|led_[3]                ; clk_50MHz ;
+; N/A           ; None        ; -2.445 ns  ; button2 ; Arkanoid:inst|platform1_position[26] ; clk_50MHz ;
+; N/A           ; None        ; -2.448 ns  ; button2 ; Arkanoid:inst|platform1_position[24] ; clk_50MHz ;
+; N/A           ; None        ; -2.454 ns  ; button2 ; Arkanoid:inst|platform1_position[23] ; clk_50MHz ;
+; N/A           ; None        ; -2.454 ns  ; button2 ; Arkanoid:inst|platform1_position[2]  ; clk_50MHz ;
+; N/A           ; None        ; -2.456 ns  ; button2 ; Arkanoid:inst|platform1_position[28] ; clk_50MHz ;
+; N/A           ; None        ; -2.457 ns  ; button2 ; Arkanoid:inst|platform1_position[25] ; clk_50MHz ;
+; N/A           ; None        ; -2.458 ns  ; button2 ; Arkanoid:inst|platform1_position[21] ; clk_50MHz ;
+; N/A           ; None        ; -2.458 ns  ; button2 ; Arkanoid:inst|platform1_position[30] ; clk_50MHz ;
+; N/A           ; None        ; -2.496 ns  ; button2 ; Arkanoid:inst|button2_state          ; clk_50MHz ;
+; N/A           ; None        ; -2.497 ns  ; button2 ; Arkanoid:inst|led_[5]                ; clk_50MHz ;
+; N/A           ; None        ; -2.497 ns  ; button2 ; Arkanoid:inst|led_[4]                ; clk_50MHz ;
+; N/A           ; None        ; -2.503 ns  ; button2 ; Arkanoid:inst|platform1_position[15] ; clk_50MHz ;
+; N/A           ; None        ; -2.507 ns  ; button2 ; Arkanoid:inst|platform1_position[13] ; clk_50MHz ;
+; N/A           ; None        ; -2.507 ns  ; button2 ; Arkanoid:inst|platform1_position[14] ; clk_50MHz ;
+; N/A           ; None        ; -2.565 ns  ; button4 ; Arkanoid:inst|platform2_position[25] ; clk_50MHz ;
+; N/A           ; None        ; -2.566 ns  ; button4 ; Arkanoid:inst|platform2_position[24] ; clk_50MHz ;
+; N/A           ; None        ; -2.570 ns  ; button4 ; Arkanoid:inst|platform2_position[28] ; clk_50MHz ;
+; N/A           ; None        ; -2.570 ns  ; button4 ; Arkanoid:inst|platform2_position[23] ; clk_50MHz ;
+; N/A           ; None        ; -2.571 ns  ; button4 ; Arkanoid:inst|platform2_position[26] ; clk_50MHz ;
+; N/A           ; None        ; -2.572 ns  ; button4 ; Arkanoid:inst|platform2_position[9]  ; clk_50MHz ;
+; N/A           ; None        ; -2.573 ns  ; button4 ; Arkanoid:inst|platform2_position[22] ; clk_50MHz ;
+; N/A           ; None        ; -2.580 ns  ; button4 ; Arkanoid:inst|platform2_position[14] ; clk_50MHz ;
+; N/A           ; None        ; -2.580 ns  ; button4 ; Arkanoid:inst|platform2_position[13] ; clk_50MHz ;
+; N/A           ; None        ; -2.698 ns  ; button2 ; Arkanoid:inst|platform1_position[0]  ; clk_50MHz ;
+; N/A           ; None        ; -2.703 ns  ; button2 ; Arkanoid:inst|platform1_position[1]  ; clk_50MHz ;
+; N/A           ; None        ; -2.822 ns  ; button3 ; Arkanoid:inst|button3_state          ; clk_50MHz ;
+; N/A           ; None        ; -2.917 ns  ; button4 ; Arkanoid:inst|platform2_position[27] ; clk_50MHz ;
+; N/A           ; None        ; -2.920 ns  ; button4 ; Arkanoid:inst|platform2_position[21] ; clk_50MHz ;
+; N/A           ; None        ; -2.970 ns  ; button4 ; Arkanoid:inst|platform2_position[30] ; clk_50MHz ;
+; N/A           ; None        ; -2.971 ns  ; button4 ; Arkanoid:inst|platform2_position[18] ; clk_50MHz ;
+; N/A           ; None        ; -3.028 ns  ; button4 ; Arkanoid:inst|button4_state          ; clk_50MHz ;
+; N/A           ; None        ; -3.034 ns  ; button4 ; Arkanoid:inst|platform2_position[0]  ; clk_50MHz ;
+; N/A           ; None        ; -3.034 ns  ; button4 ; Arkanoid:inst|platform2_position[1]  ; clk_50MHz ;
+; N/A           ; None        ; -3.036 ns  ; button4 ; Arkanoid:inst|platform2_position[2]  ; clk_50MHz ;
+; N/A           ; None        ; -3.038 ns  ; button4 ; Arkanoid:inst|platform2_position[4]  ; clk_50MHz ;
+; N/A           ; None        ; -3.053 ns  ; button4 ; Arkanoid:inst|platform2_position[15] ; clk_50MHz ;
+; N/A           ; None        ; -3.054 ns  ; button4 ; Arkanoid:inst|platform2_position[17] ; clk_50MHz ;
+; N/A           ; None        ; -3.055 ns  ; button4 ; Arkanoid:inst|platform2_position[19] ; clk_50MHz ;
+; N/A           ; None        ; -3.056 ns  ; button4 ; Arkanoid:inst|platform2_position[16] ; clk_50MHz ;
+; N/A           ; None        ; -3.057 ns  ; button4 ; Arkanoid:inst|platform2_position[20] ; clk_50MHz ;
+; N/A           ; None        ; -3.253 ns  ; button4 ; Arkanoid:inst|platform2_position[29] ; clk_50MHz ;
+; N/A           ; None        ; -3.315 ns  ; button4 ; Arkanoid:inst|led_[1]                ; clk_50MHz ;
+; N/A           ; None        ; -3.315 ns  ; button4 ; Arkanoid:inst|led_[0]                ; clk_50MHz ;
+; N/A           ; None        ; -3.321 ns  ; button4 ; Arkanoid:inst|platform2_position[5]  ; clk_50MHz ;
+; N/A           ; None        ; -3.323 ns  ; button4 ; Arkanoid:inst|platform2_position[8]  ; clk_50MHz ;
+; N/A           ; None        ; -3.326 ns  ; button4 ; Arkanoid:inst|platform2_position[10] ; clk_50MHz ;
+; N/A           ; None        ; -3.326 ns  ; button4 ; Arkanoid:inst|platform2_position[7]  ; clk_50MHz ;
+; N/A           ; None        ; -3.326 ns  ; button4 ; Arkanoid:inst|platform2_position[6]  ; clk_50MHz ;
+; N/A           ; None        ; -3.377 ns  ; button4 ; Arkanoid:inst|platform2_position[11] ; clk_50MHz ;
+; N/A           ; None        ; -3.379 ns  ; button4 ; Arkanoid:inst|platform2_position[12] ; clk_50MHz ;
+; N/A           ; None        ; -3.380 ns  ; button4 ; Arkanoid:inst|platform2_position[31] ; clk_50MHz ;
+; N/A           ; None        ; -4.656 ns  ; button1 ; Arkanoid:inst|platform1_position[22] ; clk_50MHz ;
+; N/A           ; None        ; -4.656 ns  ; button4 ; Arkanoid:inst|platform2_position[3]  ; clk_50MHz ;
+; N/A           ; None        ; -4.766 ns  ; button2 ; Arkanoid:inst|platform1_position[3]  ; clk_50MHz ;
+; N/A           ; None        ; -4.819 ns  ; button1 ; Arkanoid:inst|platform1_position[21] ; clk_50MHz ;
+; N/A           ; None        ; -4.969 ns  ; button1 ; Arkanoid:inst|platform1_position[8]  ; clk_50MHz ;
+; N/A           ; None        ; -4.970 ns  ; button1 ; Arkanoid:inst|platform1_position[7]  ; clk_50MHz ;
+; N/A           ; None        ; -5.015 ns  ; button1 ; Arkanoid:inst|platform1_position[6]  ; clk_50MHz ;
+; N/A           ; None        ; -5.023 ns  ; button1 ; Arkanoid:inst|platform1_position[4]  ; clk_50MHz ;
+; N/A           ; None        ; -5.024 ns  ; button1 ; Arkanoid:inst|platform1_position[5]  ; clk_50MHz ;
+; N/A           ; None        ; -5.125 ns  ; button1 ; Arkanoid:inst|platform1_position[15] ; clk_50MHz ;
+; N/A           ; None        ; -5.142 ns  ; button1 ; Arkanoid:inst|platform1_position[31] ; clk_50MHz ;
+; N/A           ; None        ; -5.165 ns  ; button1 ; Arkanoid:inst|platform1_position[18] ; clk_50MHz ;
+; N/A           ; None        ; -5.168 ns  ; button1 ; Arkanoid:inst|platform1_position[12] ; clk_50MHz ;
+; N/A           ; None        ; -5.172 ns  ; button1 ; Arkanoid:inst|platform1_position[20] ; clk_50MHz ;
+; N/A           ; None        ; -5.173 ns  ; button1 ; Arkanoid:inst|platform1_position[23] ; clk_50MHz ;
+; N/A           ; None        ; -5.201 ns  ; button1 ; Arkanoid:inst|platform1_position[24] ; clk_50MHz ;
+; N/A           ; None        ; -5.220 ns  ; button1 ; Arkanoid:inst|platform1_position[19] ; clk_50MHz ;
+; N/A           ; None        ; -5.226 ns  ; button1 ; Arkanoid:inst|platform1_position[9]  ; clk_50MHz ;
+; N/A           ; None        ; -5.470 ns  ; button1 ; Arkanoid:inst|platform1_position[14] ; clk_50MHz ;
+; N/A           ; None        ; -5.472 ns  ; button1 ; Arkanoid:inst|platform1_position[11] ; clk_50MHz ;
+; N/A           ; None        ; -5.475 ns  ; button1 ; Arkanoid:inst|platform1_position[10] ; clk_50MHz ;
+; N/A           ; None        ; -5.484 ns  ; button1 ; Arkanoid:inst|platform1_position[13] ; clk_50MHz ;
+; N/A           ; None        ; -5.499 ns  ; button1 ; Arkanoid:inst|platform1_position[0]  ; clk_50MHz ;
+; N/A           ; None        ; -5.531 ns  ; button1 ; Arkanoid:inst|platform1_position[1]  ; clk_50MHz ;
+; N/A           ; None        ; -5.532 ns  ; button3 ; Arkanoid:inst|platform2_position[16] ; clk_50MHz ;
+; N/A           ; None        ; -5.551 ns  ; button3 ; Arkanoid:inst|platform2_position[7]  ; clk_50MHz ;
+; N/A           ; None        ; -5.555 ns  ; button1 ; Arkanoid:inst|platform1_position[25] ; clk_50MHz ;
+; N/A           ; None        ; -5.561 ns  ; button3 ; Arkanoid:inst|platform2_position[27] ; clk_50MHz ;
+; N/A           ; None        ; -5.572 ns  ; button3 ; Arkanoid:inst|platform2_position[29] ; clk_50MHz ;
+; N/A           ; None        ; -5.574 ns  ; button1 ; Arkanoid:inst|platform1_position[26] ; clk_50MHz ;
+; N/A           ; None        ; -5.597 ns  ; button3 ; Arkanoid:inst|platform2_position[17] ; clk_50MHz ;
+; N/A           ; None        ; -5.604 ns  ; button3 ; Arkanoid:inst|platform2_position[6]  ; clk_50MHz ;
+; N/A           ; None        ; -5.606 ns  ; button3 ; Arkanoid:inst|platform2_position[19] ; clk_50MHz ;
+; N/A           ; None        ; -5.612 ns  ; button3 ; Arkanoid:inst|platform2_position[24] ; clk_50MHz ;
+; N/A           ; None        ; -5.620 ns  ; button3 ; Arkanoid:inst|platform2_position[31] ; clk_50MHz ;
+; N/A           ; None        ; -5.627 ns  ; button3 ; Arkanoid:inst|platform2_position[10] ; clk_50MHz ;
+; N/A           ; None        ; -5.656 ns  ; button3 ; Arkanoid:inst|platform2_position[26] ; clk_50MHz ;
+; N/A           ; None        ; -5.722 ns  ; button1 ; Arkanoid:inst|platform1_position[27] ; clk_50MHz ;
+; N/A           ; None        ; -5.727 ns  ; button1 ; Arkanoid:inst|platform1_position[28] ; clk_50MHz ;
+; N/A           ; None        ; -5.730 ns  ; button1 ; Arkanoid:inst|platform1_position[16] ; clk_50MHz ;
+; N/A           ; None        ; -5.815 ns  ; button1 ; Arkanoid:inst|platform1_position[2]  ; clk_50MHz ;
+; N/A           ; None        ; -5.845 ns  ; button1 ; Arkanoid:inst|platform1_position[17] ; clk_50MHz ;
+; N/A           ; None        ; -5.879 ns  ; button1 ; Arkanoid:inst|platform1_position[29] ; clk_50MHz ;
+; N/A           ; None        ; -5.881 ns  ; button1 ; Arkanoid:inst|platform1_position[30] ; clk_50MHz ;
+; N/A           ; None        ; -5.888 ns  ; button3 ; Arkanoid:inst|platform2_position[25] ; clk_50MHz ;
+; N/A           ; None        ; -5.923 ns  ; button3 ; Arkanoid:inst|platform2_position[5]  ; clk_50MHz ;
+; N/A           ; None        ; -5.952 ns  ; button3 ; Arkanoid:inst|platform2_position[28] ; clk_50MHz ;
+; N/A           ; None        ; -5.953 ns  ; button3 ; Arkanoid:inst|platform2_position[23] ; clk_50MHz ;
+; N/A           ; None        ; -5.960 ns  ; button3 ; Arkanoid:inst|platform2_position[0]  ; clk_50MHz ;
+; N/A           ; None        ; -5.960 ns  ; button3 ; Arkanoid:inst|platform2_position[20] ; clk_50MHz ;
+; N/A           ; None        ; -5.978 ns  ; button3 ; Arkanoid:inst|platform2_position[15] ; clk_50MHz ;
+; N/A           ; None        ; -5.989 ns  ; button3 ; Arkanoid:inst|platform2_position[1]  ; clk_50MHz ;
+; N/A           ; None        ; -6.008 ns  ; button3 ; Arkanoid:inst|platform2_position[8]  ; clk_50MHz ;
+; N/A           ; None        ; -6.050 ns  ; button3 ; Arkanoid:inst|platform2_position[21] ; clk_50MHz ;
+; N/A           ; None        ; -6.056 ns  ; button3 ; Arkanoid:inst|platform2_position[30] ; clk_50MHz ;
+; N/A           ; None        ; -6.116 ns  ; button3 ; Arkanoid:inst|platform2_position[9]  ; clk_50MHz ;
+; N/A           ; None        ; -6.127 ns  ; button3 ; Arkanoid:inst|platform2_position[14] ; clk_50MHz ;
+; N/A           ; None        ; -6.159 ns  ; button3 ; Arkanoid:inst|platform2_position[4]  ; clk_50MHz ;
+; N/A           ; None        ; -6.243 ns  ; button3 ; Arkanoid:inst|platform2_position[2]  ; clk_50MHz ;
+; N/A           ; None        ; -6.271 ns  ; button3 ; Arkanoid:inst|platform2_position[18] ; clk_50MHz ;
+; N/A           ; None        ; -6.354 ns  ; button3 ; Arkanoid:inst|platform2_position[11] ; clk_50MHz ;
+; N/A           ; None        ; -6.357 ns  ; button3 ; Arkanoid:inst|platform2_position[12] ; clk_50MHz ;
+; N/A           ; None        ; -6.584 ns  ; button3 ; Arkanoid:inst|platform2_position[22] ; clk_50MHz ;
+; N/A           ; None        ; -6.911 ns  ; button3 ; Arkanoid:inst|platform2_position[13] ; clk_50MHz ;
+; N/A           ; None        ; -6.992 ns  ; button3 ; Arkanoid:inst|platform2_position[3]  ; clk_50MHz ;
+; N/A           ; None        ; -7.289 ns  ; button2 ; Arkanoid:inst|red_[0]                ; clk_50MHz ;
+; N/A           ; None        ; -7.292 ns  ; button2 ; Arkanoid:inst|green_[2]              ; clk_50MHz ;
+; N/A           ; None        ; -7.293 ns  ; button2 ; Arkanoid:inst|red_[2]                ; clk_50MHz ;
+; N/A           ; None        ; -7.295 ns  ; button2 ; Arkanoid:inst|blue_[3]               ; clk_50MHz ;
+; N/A           ; None        ; -7.550 ns  ; button1 ; Arkanoid:inst|platform1_position[3]  ; clk_50MHz ;
+; N/A           ; None        ; -7.940 ns  ; button2 ; Arkanoid:inst|red_[3]                ; clk_50MHz ;
+; N/A           ; None        ; -7.990 ns  ; button2 ; Arkanoid:inst|green_[3]              ; clk_50MHz ;
+; N/A           ; None        ; -7.992 ns  ; button2 ; Arkanoid:inst|red_[1]                ; clk_50MHz ;
+; N/A           ; None        ; -8.134 ns  ; button2 ; Arkanoid:inst|blue_[0]               ; clk_50MHz ;
+; N/A           ; None        ; -8.359 ns  ; button4 ; Arkanoid:inst|red_[0]                ; clk_50MHz ;
+; N/A           ; None        ; -8.361 ns  ; button4 ; Arkanoid:inst|green_[2]              ; clk_50MHz ;
+; N/A           ; None        ; -8.365 ns  ; button4 ; Arkanoid:inst|blue_[3]               ; clk_50MHz ;
+; N/A           ; None        ; -8.394 ns  ; button4 ; Arkanoid:inst|red_[2]                ; clk_50MHz ;
+; N/A           ; None        ; -9.041 ns  ; button4 ; Arkanoid:inst|red_[3]                ; clk_50MHz ;
+; N/A           ; None        ; -9.059 ns  ; button4 ; Arkanoid:inst|green_[3]              ; clk_50MHz ;
+; N/A           ; None        ; -9.062 ns  ; button4 ; Arkanoid:inst|red_[1]                ; clk_50MHz ;
+; N/A           ; None        ; -9.204 ns  ; button4 ; Arkanoid:inst|blue_[0]               ; clk_50MHz ;
+; N/A           ; None        ; -10.107 ns ; button1 ; Arkanoid:inst|red_[0]                ; clk_50MHz ;
+; N/A           ; None        ; -10.110 ns ; button1 ; Arkanoid:inst|green_[2]              ; clk_50MHz ;
+; N/A           ; None        ; -10.111 ns ; button1 ; Arkanoid:inst|red_[2]                ; clk_50MHz ;
+; N/A           ; None        ; -10.113 ns ; button1 ; Arkanoid:inst|blue_[3]               ; clk_50MHz ;
+; N/A           ; None        ; -10.599 ns ; button3 ; Arkanoid:inst|red_[0]                ; clk_50MHz ;
+; N/A           ; None        ; -10.601 ns ; button3 ; Arkanoid:inst|green_[2]              ; clk_50MHz ;
+; N/A           ; None        ; -10.605 ns ; button3 ; Arkanoid:inst|blue_[3]               ; clk_50MHz ;
+; N/A           ; None        ; -10.634 ns ; button3 ; Arkanoid:inst|red_[2]                ; clk_50MHz ;
+; N/A           ; None        ; -10.758 ns ; button1 ; Arkanoid:inst|red_[3]                ; clk_50MHz ;
+; N/A           ; None        ; -10.808 ns ; button1 ; Arkanoid:inst|green_[3]              ; clk_50MHz ;
+; N/A           ; None        ; -10.810 ns ; button1 ; Arkanoid:inst|red_[1]                ; clk_50MHz ;
+; N/A           ; None        ; -10.952 ns ; button1 ; Arkanoid:inst|blue_[0]               ; clk_50MHz ;
+; N/A           ; None        ; -11.281 ns ; button3 ; Arkanoid:inst|red_[3]                ; clk_50MHz ;
+; N/A           ; None        ; -11.299 ns ; button3 ; Arkanoid:inst|green_[3]              ; clk_50MHz ;
+; N/A           ; None        ; -11.302 ns ; button3 ; Arkanoid:inst|red_[1]                ; clk_50MHz ;
+; N/A           ; None        ; -11.444 ns ; button3 ; Arkanoid:inst|blue_[0]               ; clk_50MHz ;
++---------------+-------------+------------+---------+--------------------------------------+-----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
+    Info: Processing started: Mon May 21 19:54:40 2012
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off myArkanoid -c myArkanoid --timing_analysis_only
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk_50MHz" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "Arkanoid:inst|clk25MHz_" as buffer
+Info: Clock "clk_50MHz" has Internal fmax of 9.7 MHz between source register "Arkanoid:inst|h_counter[1]" and destination register "Arkanoid:inst|blue_[0]" (period= 103.135 ns)
+    Info: + Longest register to register delay is 102.875 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X14_Y11_N3; Fanout = 6; REG Node = 'Arkanoid:inst|h_counter[1]'
+        Info: 2: + IC(0.631 ns) + CELL(0.517 ns) = 1.148 ns; Loc. = LCCOMB_X15_Y11_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~1'
+        Info: 3: + IC(0.000 ns) + CELL(0.080 ns) = 1.228 ns; Loc. = LCCOMB_X15_Y11_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~3'
+        Info: 4: + IC(0.000 ns) + CELL(0.080 ns) = 1.308 ns; Loc. = LCCOMB_X15_Y11_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~5'
+        Info: 5: + IC(0.000 ns) + CELL(0.080 ns) = 1.388 ns; Loc. = LCCOMB_X15_Y11_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~7'
+        Info: 6: + IC(0.000 ns) + CELL(0.080 ns) = 1.468 ns; Loc. = LCCOMB_X15_Y11_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~9'
+        Info: 7: + IC(0.000 ns) + CELL(0.080 ns) = 1.548 ns; Loc. = LCCOMB_X15_Y11_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~11'
+        Info: 8: + IC(0.000 ns) + CELL(0.174 ns) = 1.722 ns; Loc. = LCCOMB_X15_Y11_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~13'
+        Info: 9: + IC(0.000 ns) + CELL(0.080 ns) = 1.802 ns; Loc. = LCCOMB_X15_Y11_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~15'
+        Info: 10: + IC(0.000 ns) + CELL(0.080 ns) = 1.882 ns; Loc. = LCCOMB_X15_Y11_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~17'
+        Info: 11: + IC(0.000 ns) + CELL(0.080 ns) = 1.962 ns; Loc. = LCCOMB_X15_Y11_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~19'
+        Info: 12: + IC(0.000 ns) + CELL(0.080 ns) = 2.042 ns; Loc. = LCCOMB_X15_Y11_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~21'
+        Info: 13: + IC(0.000 ns) + CELL(0.080 ns) = 2.122 ns; Loc. = LCCOMB_X15_Y11_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~23'
+        Info: 14: + IC(0.000 ns) + CELL(0.080 ns) = 2.202 ns; Loc. = LCCOMB_X15_Y11_N26; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~25'
+        Info: 15: + IC(0.000 ns) + CELL(0.080 ns) = 2.282 ns; Loc. = LCCOMB_X15_Y11_N28; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~27'
+        Info: 16: + IC(0.000 ns) + CELL(0.161 ns) = 2.443 ns; Loc. = LCCOMB_X15_Y11_N30; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~29'
+        Info: 17: + IC(0.000 ns) + CELL(0.080 ns) = 2.523 ns; Loc. = LCCOMB_X15_Y10_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~31'
+        Info: 18: + IC(0.000 ns) + CELL(0.080 ns) = 2.603 ns; Loc. = LCCOMB_X15_Y10_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~33'
+        Info: 19: + IC(0.000 ns) + CELL(0.080 ns) = 2.683 ns; Loc. = LCCOMB_X15_Y10_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~35'
+        Info: 20: + IC(0.000 ns) + CELL(0.080 ns) = 2.763 ns; Loc. = LCCOMB_X15_Y10_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~37'
+        Info: 21: + IC(0.000 ns) + CELL(0.080 ns) = 2.843 ns; Loc. = LCCOMB_X15_Y10_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~39'
+        Info: 22: + IC(0.000 ns) + CELL(0.080 ns) = 2.923 ns; Loc. = LCCOMB_X15_Y10_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~41'
+        Info: 23: + IC(0.000 ns) + CELL(0.080 ns) = 3.003 ns; Loc. = LCCOMB_X15_Y10_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~43'
+        Info: 24: + IC(0.000 ns) + CELL(0.174 ns) = 3.177 ns; Loc. = LCCOMB_X15_Y10_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~45'
+        Info: 25: + IC(0.000 ns) + CELL(0.080 ns) = 3.257 ns; Loc. = LCCOMB_X15_Y10_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~47'
+        Info: 26: + IC(0.000 ns) + CELL(0.080 ns) = 3.337 ns; Loc. = LCCOMB_X15_Y10_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~49'
+        Info: 27: + IC(0.000 ns) + CELL(0.080 ns) = 3.417 ns; Loc. = LCCOMB_X15_Y10_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~51'
+        Info: 28: + IC(0.000 ns) + CELL(0.080 ns) = 3.497 ns; Loc. = LCCOMB_X15_Y10_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~53'
+        Info: 29: + IC(0.000 ns) + CELL(0.080 ns) = 3.577 ns; Loc. = LCCOMB_X15_Y10_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~55'
+        Info: 30: + IC(0.000 ns) + CELL(0.080 ns) = 3.657 ns; Loc. = LCCOMB_X15_Y10_N26; Fanout = 2; COMB Node = 'Arkanoid:inst|Add8~57'
+        Info: 31: + IC(0.000 ns) + CELL(0.080 ns) = 3.737 ns; Loc. = LCCOMB_X15_Y10_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|Add8~59'
+        Info: 32: + IC(0.000 ns) + CELL(0.458 ns) = 4.195 ns; Loc. = LCCOMB_X15_Y10_N30; Fanout = 65; COMB Node = 'Arkanoid:inst|Add8~60'
+        Info: 33: + IC(1.268 ns) + CELL(0.495 ns) = 5.958 ns; Loc. = LCCOMB_X16_Y11_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~7'
+        Info: 34: + IC(0.000 ns) + CELL(0.080 ns) = 6.038 ns; Loc. = LCCOMB_X16_Y11_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~9'
+        Info: 35: + IC(0.000 ns) + CELL(0.080 ns) = 6.118 ns; Loc. = LCCOMB_X16_Y11_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~11'
+        Info: 36: + IC(0.000 ns) + CELL(0.080 ns) = 6.198 ns; Loc. = LCCOMB_X16_Y11_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~13'
+        Info: 37: + IC(0.000 ns) + CELL(0.174 ns) = 6.372 ns; Loc. = LCCOMB_X16_Y11_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~15'
+        Info: 38: + IC(0.000 ns) + CELL(0.080 ns) = 6.452 ns; Loc. = LCCOMB_X16_Y11_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~17'
+        Info: 39: + IC(0.000 ns) + CELL(0.080 ns) = 6.532 ns; Loc. = LCCOMB_X16_Y11_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~19'
+        Info: 40: + IC(0.000 ns) + CELL(0.080 ns) = 6.612 ns; Loc. = LCCOMB_X16_Y11_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~21'
+        Info: 41: + IC(0.000 ns) + CELL(0.080 ns) = 6.692 ns; Loc. = LCCOMB_X16_Y11_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~23'
+        Info: 42: + IC(0.000 ns) + CELL(0.080 ns) = 6.772 ns; Loc. = LCCOMB_X16_Y11_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~25'
+        Info: 43: + IC(0.000 ns) + CELL(0.080 ns) = 6.852 ns; Loc. = LCCOMB_X16_Y11_N26; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~27'
+        Info: 44: + IC(0.000 ns) + CELL(0.080 ns) = 6.932 ns; Loc. = LCCOMB_X16_Y11_N28; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~29'
+        Info: 45: + IC(0.000 ns) + CELL(0.161 ns) = 7.093 ns; Loc. = LCCOMB_X16_Y11_N30; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~31'
+        Info: 46: + IC(0.000 ns) + CELL(0.080 ns) = 7.173 ns; Loc. = LCCOMB_X16_Y10_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~33'
+        Info: 47: + IC(0.000 ns) + CELL(0.080 ns) = 7.253 ns; Loc. = LCCOMB_X16_Y10_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~35'
+        Info: 48: + IC(0.000 ns) + CELL(0.080 ns) = 7.333 ns; Loc. = LCCOMB_X16_Y10_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~37'
+        Info: 49: + IC(0.000 ns) + CELL(0.080 ns) = 7.413 ns; Loc. = LCCOMB_X16_Y10_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~39'
+        Info: 50: + IC(0.000 ns) + CELL(0.080 ns) = 7.493 ns; Loc. = LCCOMB_X16_Y10_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~41'
+        Info: 51: + IC(0.000 ns) + CELL(0.080 ns) = 7.573 ns; Loc. = LCCOMB_X16_Y10_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~43'
+        Info: 52: + IC(0.000 ns) + CELL(0.080 ns) = 7.653 ns; Loc. = LCCOMB_X16_Y10_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~45'
+        Info: 53: + IC(0.000 ns) + CELL(0.174 ns) = 7.827 ns; Loc. = LCCOMB_X16_Y10_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~47'
+        Info: 54: + IC(0.000 ns) + CELL(0.080 ns) = 7.907 ns; Loc. = LCCOMB_X16_Y10_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~49'
+        Info: 55: + IC(0.000 ns) + CELL(0.080 ns) = 7.987 ns; Loc. = LCCOMB_X16_Y10_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~51'
+        Info: 56: + IC(0.000 ns) + CELL(0.080 ns) = 8.067 ns; Loc. = LCCOMB_X16_Y10_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~53'
+        Info: 57: + IC(0.000 ns) + CELL(0.080 ns) = 8.147 ns; Loc. = LCCOMB_X16_Y10_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~55'
+        Info: 58: + IC(0.000 ns) + CELL(0.080 ns) = 8.227 ns; Loc. = LCCOMB_X16_Y10_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~57'
+        Info: 59: + IC(0.000 ns) + CELL(0.458 ns) = 8.685 ns; Loc. = LCCOMB_X16_Y10_N26; Fanout = 4; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|lpm_abs_0s9:my_abs_num|cs2a[1]~58'
+        Info: 60: + IC(1.260 ns) + CELL(0.495 ns) = 10.440 ns; Loc. = LCCOMB_X16_Y15_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_4_result_int[2]~1'
+        Info: 61: + IC(0.000 ns) + CELL(0.080 ns) = 10.520 ns; Loc. = LCCOMB_X16_Y15_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_4_result_int[3]~3'
+        Info: 62: + IC(0.000 ns) + CELL(0.080 ns) = 10.600 ns; Loc. = LCCOMB_X16_Y15_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_4_result_int[4]~5'
+        Info: 63: + IC(0.000 ns) + CELL(0.458 ns) = 11.058 ns; Loc. = LCCOMB_X16_Y15_N28; Fanout = 11; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_4_result_int[5]~6'
+        Info: 64: + IC(0.859 ns) + CELL(0.177 ns) = 12.094 ns; Loc. = LCCOMB_X18_Y15_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[29]~435'
+        Info: 65: + IC(0.836 ns) + CELL(0.517 ns) = 13.447 ns; Loc. = LCCOMB_X16_Y15_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_5_result_int[2]~1'
+        Info: 66: + IC(0.000 ns) + CELL(0.080 ns) = 13.527 ns; Loc. = LCCOMB_X16_Y15_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_5_result_int[3]~3'
+        Info: 67: + IC(0.000 ns) + CELL(0.174 ns) = 13.701 ns; Loc. = LCCOMB_X16_Y15_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_5_result_int[4]~5'
+        Info: 68: + IC(0.000 ns) + CELL(0.080 ns) = 13.781 ns; Loc. = LCCOMB_X16_Y15_N16; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_5_result_int[5]~7'
+        Info: 69: + IC(0.000 ns) + CELL(0.458 ns) = 14.239 ns; Loc. = LCCOMB_X16_Y15_N18; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_5_result_int[6]~8'
+        Info: 70: + IC(0.930 ns) + CELL(0.177 ns) = 15.346 ns; Loc. = LCCOMB_X18_Y15_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[36]~442'
+        Info: 71: + IC(0.516 ns) + CELL(0.495 ns) = 16.357 ns; Loc. = LCCOMB_X19_Y15_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_6_result_int[2]~1'
+        Info: 72: + IC(0.000 ns) + CELL(0.080 ns) = 16.437 ns; Loc. = LCCOMB_X19_Y15_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_6_result_int[3]~3'
+        Info: 73: + IC(0.000 ns) + CELL(0.080 ns) = 16.517 ns; Loc. = LCCOMB_X19_Y15_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_6_result_int[4]~5'
+        Info: 74: + IC(0.000 ns) + CELL(0.080 ns) = 16.597 ns; Loc. = LCCOMB_X19_Y15_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_6_result_int[5]~7'
+        Info: 75: + IC(0.000 ns) + CELL(0.080 ns) = 16.677 ns; Loc. = LCCOMB_X19_Y15_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_6_result_int[6]~9'
+        Info: 76: + IC(0.000 ns) + CELL(0.458 ns) = 17.135 ns; Loc. = LCCOMB_X19_Y15_N28; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_6_result_int[7]~10'
+        Info: 77: + IC(0.920 ns) + CELL(0.178 ns) = 18.233 ns; Loc. = LCCOMB_X20_Y18_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[43]~447'
+        Info: 78: + IC(0.914 ns) + CELL(0.517 ns) = 19.664 ns; Loc. = LCCOMB_X19_Y15_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_7_result_int[2]~1'
+        Info: 79: + IC(0.000 ns) + CELL(0.080 ns) = 19.744 ns; Loc. = LCCOMB_X19_Y15_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_7_result_int[3]~3'
+        Info: 80: + IC(0.000 ns) + CELL(0.080 ns) = 19.824 ns; Loc. = LCCOMB_X19_Y15_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_7_result_int[4]~5'
+        Info: 81: + IC(0.000 ns) + CELL(0.080 ns) = 19.904 ns; Loc. = LCCOMB_X19_Y15_N8; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_7_result_int[5]~7'
+        Info: 82: + IC(0.000 ns) + CELL(0.080 ns) = 19.984 ns; Loc. = LCCOMB_X19_Y15_N10; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_7_result_int[6]~9'
+        Info: 83: + IC(0.000 ns) + CELL(0.458 ns) = 20.442 ns; Loc. = LCCOMB_X19_Y15_N12; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_7_result_int[7]~10'
+        Info: 84: + IC(0.994 ns) + CELL(0.178 ns) = 21.614 ns; Loc. = LCCOMB_X20_Y18_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[50]~453'
+        Info: 85: + IC(0.551 ns) + CELL(0.517 ns) = 22.682 ns; Loc. = LCCOMB_X19_Y18_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_8_result_int[2]~1'
+        Info: 86: + IC(0.000 ns) + CELL(0.080 ns) = 22.762 ns; Loc. = LCCOMB_X19_Y18_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_8_result_int[3]~3'
+        Info: 87: + IC(0.000 ns) + CELL(0.080 ns) = 22.842 ns; Loc. = LCCOMB_X19_Y18_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_8_result_int[4]~5'
+        Info: 88: + IC(0.000 ns) + CELL(0.080 ns) = 22.922 ns; Loc. = LCCOMB_X19_Y18_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_8_result_int[5]~7'
+        Info: 89: + IC(0.000 ns) + CELL(0.080 ns) = 23.002 ns; Loc. = LCCOMB_X19_Y18_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_8_result_int[6]~9'
+        Info: 90: + IC(0.000 ns) + CELL(0.458 ns) = 23.460 ns; Loc. = LCCOMB_X19_Y18_N30; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_8_result_int[7]~10'
+        Info: 91: + IC(0.943 ns) + CELL(0.322 ns) = 24.725 ns; Loc. = LCCOMB_X19_Y22_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[57]~460'
+        Info: 92: + IC(0.909 ns) + CELL(0.517 ns) = 26.151 ns; Loc. = LCCOMB_X19_Y18_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_9_result_int[2]~1'
+        Info: 93: + IC(0.000 ns) + CELL(0.080 ns) = 26.231 ns; Loc. = LCCOMB_X19_Y18_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_9_result_int[3]~3'
+        Info: 94: + IC(0.000 ns) + CELL(0.080 ns) = 26.311 ns; Loc. = LCCOMB_X19_Y18_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_9_result_int[4]~5'
+        Info: 95: + IC(0.000 ns) + CELL(0.080 ns) = 26.391 ns; Loc. = LCCOMB_X19_Y18_N6; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_9_result_int[5]~7'
+        Info: 96: + IC(0.000 ns) + CELL(0.080 ns) = 26.471 ns; Loc. = LCCOMB_X19_Y18_N8; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_9_result_int[6]~9'
+        Info: 97: + IC(0.000 ns) + CELL(0.458 ns) = 26.929 ns; Loc. = LCCOMB_X19_Y18_N10; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_9_result_int[7]~10'
+        Info: 98: + IC(0.922 ns) + CELL(0.322 ns) = 28.173 ns; Loc. = LCCOMB_X19_Y22_N12; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[68]~461'
+        Info: 99: + IC(0.793 ns) + CELL(0.495 ns) = 29.461 ns; Loc. = LCCOMB_X20_Y22_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_10_result_int[6]~9'
+        Info: 100: + IC(0.000 ns) + CELL(0.458 ns) = 29.919 ns; Loc. = LCCOMB_X20_Y22_N30; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_10_result_int[7]~10'
+        Info: 101: + IC(1.241 ns) + CELL(0.177 ns) = 31.337 ns; Loc. = LCCOMB_X20_Y21_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[71]~472'
+        Info: 102: + IC(0.872 ns) + CELL(0.517 ns) = 32.726 ns; Loc. = LCCOMB_X20_Y22_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_11_result_int[2]~1'
+        Info: 103: + IC(0.000 ns) + CELL(0.080 ns) = 32.806 ns; Loc. = LCCOMB_X20_Y22_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_11_result_int[3]~3'
+        Info: 104: + IC(0.000 ns) + CELL(0.458 ns) = 33.264 ns; Loc. = LCCOMB_X20_Y22_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_11_result_int[4]~4'
+        Info: 105: + IC(1.206 ns) + CELL(0.178 ns) = 34.648 ns; Loc. = LCCOMB_X20_Y21_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[81]~474'
+        Info: 106: + IC(0.839 ns) + CELL(0.517 ns) = 36.004 ns; Loc. = LCCOMB_X19_Y21_N20; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_12_result_int[5]~7'
+        Info: 107: + IC(0.000 ns) + CELL(0.080 ns) = 36.084 ns; Loc. = LCCOMB_X19_Y21_N22; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_12_result_int[6]~9'
+        Info: 108: + IC(0.000 ns) + CELL(0.458 ns) = 36.542 ns; Loc. = LCCOMB_X19_Y21_N24; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_12_result_int[7]~10'
+        Info: 109: + IC(0.602 ns) + CELL(0.178 ns) = 37.322 ns; Loc. = LCCOMB_X20_Y21_N30; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[89]~605'
+        Info: 110: + IC(0.814 ns) + CELL(0.517 ns) = 38.653 ns; Loc. = LCCOMB_X19_Y21_N8; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_13_result_int[6]~9'
+        Info: 111: + IC(0.000 ns) + CELL(0.458 ns) = 39.111 ns; Loc. = LCCOMB_X19_Y21_N10; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_13_result_int[7]~10'
+        Info: 112: + IC(0.634 ns) + CELL(0.322 ns) = 40.067 ns; Loc. = LCCOMB_X18_Y21_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[92]~490'
+        Info: 113: + IC(0.884 ns) + CELL(0.517 ns) = 41.468 ns; Loc. = LCCOMB_X19_Y20_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_14_result_int[2]~1'
+        Info: 114: + IC(0.000 ns) + CELL(0.080 ns) = 41.548 ns; Loc. = LCCOMB_X19_Y20_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_14_result_int[3]~3'
+        Info: 115: + IC(0.000 ns) + CELL(0.080 ns) = 41.628 ns; Loc. = LCCOMB_X19_Y20_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_14_result_int[4]~5'
+        Info: 116: + IC(0.000 ns) + CELL(0.174 ns) = 41.802 ns; Loc. = LCCOMB_X19_Y20_N14; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_14_result_int[5]~7'
+        Info: 117: + IC(0.000 ns) + CELL(0.080 ns) = 41.882 ns; Loc. = LCCOMB_X19_Y20_N16; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_14_result_int[6]~9'
+        Info: 118: + IC(0.000 ns) + CELL(0.458 ns) = 42.340 ns; Loc. = LCCOMB_X19_Y20_N18; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_14_result_int[7]~10'
+        Info: 119: + IC(0.917 ns) + CELL(0.322 ns) = 43.579 ns; Loc. = LCCOMB_X18_Y21_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[99]~495'
+        Info: 120: + IC(0.856 ns) + CELL(0.495 ns) = 44.930 ns; Loc. = LCCOMB_X18_Y20_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_15_result_int[2]~1'
+        Info: 121: + IC(0.000 ns) + CELL(0.080 ns) = 45.010 ns; Loc. = LCCOMB_X18_Y20_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_15_result_int[3]~3'
+        Info: 122: + IC(0.000 ns) + CELL(0.080 ns) = 45.090 ns; Loc. = LCCOMB_X18_Y20_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_15_result_int[4]~5'
+        Info: 123: + IC(0.000 ns) + CELL(0.080 ns) = 45.170 ns; Loc. = LCCOMB_X18_Y20_N6; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_15_result_int[5]~7'
+        Info: 124: + IC(0.000 ns) + CELL(0.080 ns) = 45.250 ns; Loc. = LCCOMB_X18_Y20_N8; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_15_result_int[6]~9'
+        Info: 125: + IC(0.000 ns) + CELL(0.458 ns) = 45.708 ns; Loc. = LCCOMB_X18_Y20_N10; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_15_result_int[7]~10'
+        Info: 126: + IC(0.897 ns) + CELL(0.177 ns) = 46.782 ns; Loc. = LCCOMB_X19_Y19_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[106]~502'
+        Info: 127: + IC(0.835 ns) + CELL(0.517 ns) = 48.134 ns; Loc. = LCCOMB_X19_Y20_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_16_result_int[2]~1'
+        Info: 128: + IC(0.000 ns) + CELL(0.080 ns) = 48.214 ns; Loc. = LCCOMB_X19_Y20_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_16_result_int[3]~3'
+        Info: 129: + IC(0.000 ns) + CELL(0.080 ns) = 48.294 ns; Loc. = LCCOMB_X19_Y20_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_16_result_int[4]~5'
+        Info: 130: + IC(0.000 ns) + CELL(0.080 ns) = 48.374 ns; Loc. = LCCOMB_X19_Y20_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_16_result_int[5]~7'
+        Info: 131: + IC(0.000 ns) + CELL(0.080 ns) = 48.454 ns; Loc. = LCCOMB_X19_Y20_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_16_result_int[6]~9'
+        Info: 132: + IC(0.000 ns) + CELL(0.458 ns) = 48.912 ns; Loc. = LCCOMB_X19_Y20_N30; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_16_result_int[7]~10'
+        Info: 133: + IC(0.961 ns) + CELL(0.177 ns) = 50.050 ns; Loc. = LCCOMB_X18_Y19_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[113]~508'
+        Info: 134: + IC(0.579 ns) + CELL(0.517 ns) = 51.146 ns; Loc. = LCCOMB_X18_Y19_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_17_result_int[2]~1'
+        Info: 135: + IC(0.000 ns) + CELL(0.080 ns) = 51.226 ns; Loc. = LCCOMB_X18_Y19_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_17_result_int[3]~3'
+        Info: 136: + IC(0.000 ns) + CELL(0.080 ns) = 51.306 ns; Loc. = LCCOMB_X18_Y19_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_17_result_int[4]~5'
+        Info: 137: + IC(0.000 ns) + CELL(0.080 ns) = 51.386 ns; Loc. = LCCOMB_X18_Y19_N12; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_17_result_int[5]~7'
+        Info: 138: + IC(0.000 ns) + CELL(0.174 ns) = 51.560 ns; Loc. = LCCOMB_X18_Y19_N14; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_17_result_int[6]~9'
+        Info: 139: + IC(0.000 ns) + CELL(0.458 ns) = 52.018 ns; Loc. = LCCOMB_X18_Y19_N16; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_17_result_int[7]~10'
+        Info: 140: + IC(0.340 ns) + CELL(0.319 ns) = 52.677 ns; Loc. = LCCOMB_X18_Y19_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[120]~513'
+        Info: 141: + IC(0.549 ns) + CELL(0.517 ns) = 53.743 ns; Loc. = LCCOMB_X19_Y19_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_18_result_int[2]~1'
+        Info: 142: + IC(0.000 ns) + CELL(0.080 ns) = 53.823 ns; Loc. = LCCOMB_X19_Y19_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_18_result_int[3]~3'
+        Info: 143: + IC(0.000 ns) + CELL(0.080 ns) = 53.903 ns; Loc. = LCCOMB_X19_Y19_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_18_result_int[4]~5'
+        Info: 144: + IC(0.000 ns) + CELL(0.458 ns) = 54.361 ns; Loc. = LCCOMB_X19_Y19_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_18_result_int[5]~6'
+        Info: 145: + IC(0.552 ns) + CELL(0.521 ns) = 55.434 ns; Loc. = LCCOMB_X20_Y19_N0; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[131]~515'
+        Info: 146: + IC(0.552 ns) + CELL(0.517 ns) = 56.503 ns; Loc. = LCCOMB_X20_Y19_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_19_result_int[6]~9'
+        Info: 147: + IC(0.000 ns) + CELL(0.458 ns) = 56.961 ns; Loc. = LCCOMB_X20_Y19_N26; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_19_result_int[7]~10'
+        Info: 148: + IC(0.650 ns) + CELL(0.177 ns) = 57.788 ns; Loc. = LCCOMB_X21_Y19_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[134]~526'
+        Info: 149: + IC(0.544 ns) + CELL(0.517 ns) = 58.849 ns; Loc. = LCCOMB_X22_Y19_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_20_result_int[2]~1'
+        Info: 150: + IC(0.000 ns) + CELL(0.080 ns) = 58.929 ns; Loc. = LCCOMB_X22_Y19_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_20_result_int[3]~3'
+        Info: 151: + IC(0.000 ns) + CELL(0.080 ns) = 59.009 ns; Loc. = LCCOMB_X22_Y19_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_20_result_int[4]~5'
+        Info: 152: + IC(0.000 ns) + CELL(0.080 ns) = 59.089 ns; Loc. = LCCOMB_X22_Y19_N6; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_20_result_int[5]~7'
+        Info: 153: + IC(0.000 ns) + CELL(0.080 ns) = 59.169 ns; Loc. = LCCOMB_X22_Y19_N8; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_20_result_int[6]~9'
+        Info: 154: + IC(0.000 ns) + CELL(0.458 ns) = 59.627 ns; Loc. = LCCOMB_X22_Y19_N10; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_20_result_int[7]~10'
+        Info: 155: + IC(0.863 ns) + CELL(0.178 ns) = 60.668 ns; Loc. = LCCOMB_X22_Y22_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[141]~531'
+        Info: 156: + IC(0.901 ns) + CELL(0.517 ns) = 62.086 ns; Loc. = LCCOMB_X22_Y19_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_21_result_int[2]~1'
+        Info: 157: + IC(0.000 ns) + CELL(0.080 ns) = 62.166 ns; Loc. = LCCOMB_X22_Y19_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_21_result_int[3]~3'
+        Info: 158: + IC(0.000 ns) + CELL(0.080 ns) = 62.246 ns; Loc. = LCCOMB_X22_Y19_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_21_result_int[4]~5'
+        Info: 159: + IC(0.000 ns) + CELL(0.080 ns) = 62.326 ns; Loc. = LCCOMB_X22_Y19_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_21_result_int[5]~7'
+        Info: 160: + IC(0.000 ns) + CELL(0.080 ns) = 62.406 ns; Loc. = LCCOMB_X22_Y19_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_21_result_int[6]~9'
+        Info: 161: + IC(0.000 ns) + CELL(0.458 ns) = 62.864 ns; Loc. = LCCOMB_X22_Y19_N28; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_21_result_int[7]~10'
+        Info: 162: + IC(0.946 ns) + CELL(0.178 ns) = 63.988 ns; Loc. = LCCOMB_X22_Y22_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[148]~537'
+        Info: 163: + IC(0.805 ns) + CELL(0.495 ns) = 65.288 ns; Loc. = LCCOMB_X23_Y22_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_22_result_int[2]~1'
+        Info: 164: + IC(0.000 ns) + CELL(0.080 ns) = 65.368 ns; Loc. = LCCOMB_X23_Y22_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_22_result_int[3]~3'
+        Info: 165: + IC(0.000 ns) + CELL(0.080 ns) = 65.448 ns; Loc. = LCCOMB_X23_Y22_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_22_result_int[4]~5'
+        Info: 166: + IC(0.000 ns) + CELL(0.080 ns) = 65.528 ns; Loc. = LCCOMB_X23_Y22_N10; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_22_result_int[5]~7'
+        Info: 167: + IC(0.000 ns) + CELL(0.080 ns) = 65.608 ns; Loc. = LCCOMB_X23_Y22_N12; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_22_result_int[6]~9'
+        Info: 168: + IC(0.000 ns) + CELL(0.458 ns) = 66.066 ns; Loc. = LCCOMB_X23_Y22_N14; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_22_result_int[7]~10'
+        Info: 169: + IC(0.562 ns) + CELL(0.322 ns) = 66.950 ns; Loc. = LCCOMB_X22_Y22_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[156]~663'
+        Info: 170: + IC(0.545 ns) + CELL(0.517 ns) = 68.012 ns; Loc. = LCCOMB_X23_Y22_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_23_result_int[3]~3'
+        Info: 171: + IC(0.000 ns) + CELL(0.080 ns) = 68.092 ns; Loc. = LCCOMB_X23_Y22_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_23_result_int[4]~5'
+        Info: 172: + IC(0.000 ns) + CELL(0.080 ns) = 68.172 ns; Loc. = LCCOMB_X23_Y22_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_23_result_int[5]~7'
+        Info: 173: + IC(0.000 ns) + CELL(0.080 ns) = 68.252 ns; Loc. = LCCOMB_X23_Y22_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_23_result_int[6]~9'
+        Info: 174: + IC(0.000 ns) + CELL(0.458 ns) = 68.710 ns; Loc. = LCCOMB_X23_Y22_N30; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_23_result_int[7]~10'
+        Info: 175: + IC(0.550 ns) + CELL(0.322 ns) = 69.582 ns; Loc. = LCCOMB_X24_Y22_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[162]~550'
+        Info: 176: + IC(0.550 ns) + CELL(0.517 ns) = 70.649 ns; Loc. = LCCOMB_X25_Y22_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_24_result_int[2]~1'
+        Info: 177: + IC(0.000 ns) + CELL(0.080 ns) = 70.729 ns; Loc. = LCCOMB_X25_Y22_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_24_result_int[3]~3'
+        Info: 178: + IC(0.000 ns) + CELL(0.080 ns) = 70.809 ns; Loc. = LCCOMB_X25_Y22_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_24_result_int[4]~5'
+        Info: 179: + IC(0.000 ns) + CELL(0.080 ns) = 70.889 ns; Loc. = LCCOMB_X25_Y22_N10; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_24_result_int[5]~7'
+        Info: 180: + IC(0.000 ns) + CELL(0.080 ns) = 70.969 ns; Loc. = LCCOMB_X25_Y22_N12; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_24_result_int[6]~9'
+        Info: 181: + IC(0.000 ns) + CELL(0.458 ns) = 71.427 ns; Loc. = LCCOMB_X25_Y22_N14; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_24_result_int[7]~10'
+        Info: 182: + IC(1.167 ns) + CELL(0.177 ns) = 72.771 ns; Loc. = LCCOMB_X30_Y22_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[169]~556'
+        Info: 183: + IC(1.111 ns) + CELL(0.517 ns) = 74.399 ns; Loc. = LCCOMB_X25_Y22_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_25_result_int[2]~1'
+        Info: 184: + IC(0.000 ns) + CELL(0.080 ns) = 74.479 ns; Loc. = LCCOMB_X25_Y22_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_25_result_int[3]~3'
+        Info: 185: + IC(0.000 ns) + CELL(0.080 ns) = 74.559 ns; Loc. = LCCOMB_X25_Y22_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_25_result_int[4]~5'
+        Info: 186: + IC(0.000 ns) + CELL(0.080 ns) = 74.639 ns; Loc. = LCCOMB_X25_Y22_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_25_result_int[5]~7'
+        Info: 187: + IC(0.000 ns) + CELL(0.080 ns) = 74.719 ns; Loc. = LCCOMB_X25_Y22_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_25_result_int[6]~9'
+        Info: 188: + IC(0.000 ns) + CELL(0.458 ns) = 75.177 ns; Loc. = LCCOMB_X25_Y22_N30; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_25_result_int[7]~10'
+        Info: 189: + IC(1.167 ns) + CELL(0.177 ns) = 76.521 ns; Loc. = LCCOMB_X30_Y22_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[176]~562'
+        Info: 190: + IC(0.542 ns) + CELL(0.517 ns) = 77.580 ns; Loc. = LCCOMB_X31_Y22_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_26_result_int[2]~1'
+        Info: 191: + IC(0.000 ns) + CELL(0.080 ns) = 77.660 ns; Loc. = LCCOMB_X31_Y22_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_26_result_int[3]~3'
+        Info: 192: + IC(0.000 ns) + CELL(0.080 ns) = 77.740 ns; Loc. = LCCOMB_X31_Y22_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_26_result_int[4]~5'
+        Info: 193: + IC(0.000 ns) + CELL(0.080 ns) = 77.820 ns; Loc. = LCCOMB_X31_Y22_N22; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_26_result_int[5]~7'
+        Info: 194: + IC(0.000 ns) + CELL(0.080 ns) = 77.900 ns; Loc. = LCCOMB_X31_Y22_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_26_result_int[6]~9'
+        Info: 195: + IC(0.000 ns) + CELL(0.458 ns) = 78.358 ns; Loc. = LCCOMB_X31_Y22_N26; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_26_result_int[7]~10'
+        Info: 196: + IC(1.188 ns) + CELL(0.178 ns) = 79.724 ns; Loc. = LCCOMB_X34_Y20_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[183]~567'
+        Info: 197: + IC(1.156 ns) + CELL(0.517 ns) = 81.397 ns; Loc. = LCCOMB_X31_Y22_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_27_result_int[2]~1'
+        Info: 198: + IC(0.000 ns) + CELL(0.080 ns) = 81.477 ns; Loc. = LCCOMB_X31_Y22_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_27_result_int[3]~3'
+        Info: 199: + IC(0.000 ns) + CELL(0.080 ns) = 81.557 ns; Loc. = LCCOMB_X31_Y22_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_27_result_int[4]~5'
+        Info: 200: + IC(0.000 ns) + CELL(0.080 ns) = 81.637 ns; Loc. = LCCOMB_X31_Y22_N10; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_27_result_int[5]~7'
+        Info: 201: + IC(0.000 ns) + CELL(0.080 ns) = 81.717 ns; Loc. = LCCOMB_X31_Y22_N12; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_27_result_int[6]~9'
+        Info: 202: + IC(0.000 ns) + CELL(0.458 ns) = 82.175 ns; Loc. = LCCOMB_X31_Y22_N14; Fanout = 15; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_27_result_int[7]~10'
+        Info: 203: + IC(0.522 ns) + CELL(0.322 ns) = 83.019 ns; Loc. = LCCOMB_X30_Y22_N6; Fanout = 3; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[192]~692'
+        Info: 204: + IC(1.442 ns) + CELL(0.517 ns) = 84.978 ns; Loc. = LCCOMB_X35_Y20_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_28_result_int[4]~5'
+        Info: 205: + IC(0.000 ns) + CELL(0.080 ns) = 85.058 ns; Loc. = LCCOMB_X35_Y20_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_28_result_int[5]~7'
+        Info: 206: + IC(0.000 ns) + CELL(0.080 ns) = 85.138 ns; Loc. = LCCOMB_X35_Y20_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_28_result_int[6]~9'
+        Info: 207: + IC(0.000 ns) + CELL(0.458 ns) = 85.596 ns; Loc. = LCCOMB_X35_Y20_N30; Fanout = 16; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_28_result_int[7]~10'
+        Info: 208: + IC(0.554 ns) + CELL(0.177 ns) = 86.327 ns; Loc. = LCCOMB_X34_Y20_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[197]~580'
+        Info: 209: + IC(0.543 ns) + CELL(0.517 ns) = 87.387 ns; Loc. = LCCOMB_X35_Y20_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_29_result_int[2]~1'
+        Info: 210: + IC(0.000 ns) + CELL(0.080 ns) = 87.467 ns; Loc. = LCCOMB_X35_Y20_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_29_result_int[3]~3'
+        Info: 211: + IC(0.000 ns) + CELL(0.080 ns) = 87.547 ns; Loc. = LCCOMB_X35_Y20_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_29_result_int[4]~5'
+        Info: 212: + IC(0.000 ns) + CELL(0.080 ns) = 87.627 ns; Loc. = LCCOMB_X35_Y20_N12; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_29_result_int[5]~7'
+        Info: 213: + IC(0.000 ns) + CELL(0.174 ns) = 87.801 ns; Loc. = LCCOMB_X35_Y20_N14; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_29_result_int[6]~9'
+        Info: 214: + IC(0.000 ns) + CELL(0.458 ns) = 88.259 ns; Loc. = LCCOMB_X35_Y20_N16; Fanout = 16; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_29_result_int[7]~10'
+        Info: 215: + IC(0.912 ns) + CELL(0.178 ns) = 89.349 ns; Loc. = LCCOMB_X36_Y18_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[205]~670'
+        Info: 216: + IC(0.537 ns) + CELL(0.517 ns) = 90.403 ns; Loc. = LCCOMB_X35_Y18_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_30_result_int[3]~3'
+        Info: 217: + IC(0.000 ns) + CELL(0.080 ns) = 90.483 ns; Loc. = LCCOMB_X35_Y18_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_30_result_int[4]~5'
+        Info: 218: + IC(0.000 ns) + CELL(0.080 ns) = 90.563 ns; Loc. = LCCOMB_X35_Y18_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_30_result_int[5]~7'
+        Info: 219: + IC(0.000 ns) + CELL(0.080 ns) = 90.643 ns; Loc. = LCCOMB_X35_Y18_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_30_result_int[6]~9'
+        Info: 220: + IC(0.000 ns) + CELL(0.458 ns) = 91.101 ns; Loc. = LCCOMB_X35_Y18_N28; Fanout = 13; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_30_result_int[7]~10'
+        Info: 221: + IC(0.898 ns) + CELL(0.178 ns) = 92.177 ns; Loc. = LCCOMB_X35_Y16_N12; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|StageOut[211]~591'
+        Info: 222: + IC(0.314 ns) + CELL(0.517 ns) = 93.008 ns; Loc. = LCCOMB_X35_Y16_N18; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_31_result_int[2]~1'
+        Info: 223: + IC(0.000 ns) + CELL(0.080 ns) = 93.088 ns; Loc. = LCCOMB_X35_Y16_N20; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_31_result_int[3]~3'
+        Info: 224: + IC(0.000 ns) + CELL(0.080 ns) = 93.168 ns; Loc. = LCCOMB_X35_Y16_N22; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_31_result_int[4]~5'
+        Info: 225: + IC(0.000 ns) + CELL(0.080 ns) = 93.248 ns; Loc. = LCCOMB_X35_Y16_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_31_result_int[5]~7'
+        Info: 226: + IC(0.000 ns) + CELL(0.080 ns) = 93.328 ns; Loc. = LCCOMB_X35_Y16_N26; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_31_result_int[6]~9'
+        Info: 227: + IC(0.000 ns) + CELL(0.458 ns) = 93.786 ns; Loc. = LCCOMB_X35_Y16_N28; Fanout = 3; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|alt_u_div_m2f:divider|add_sub_31_result_int[7]~10'
+        Info: 228: + IC(0.825 ns) + CELL(0.521 ns) = 95.132 ns; Loc. = LCCOMB_X31_Y16_N14; Fanout = 1; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|op_1~0'
+        Info: 229: + IC(0.817 ns) + CELL(0.178 ns) = 96.127 ns; Loc. = LCCOMB_X35_Y16_N0; Fanout = 19; COMB Node = 'Arkanoid:inst|lpm_divide:Div0|lpm_divide_8so:auto_generated|abs_divider_lbg:divider|quotient[0]~4'
+        Info: 230: + IC(0.322 ns) + CELL(0.178 ns) = 96.627 ns; Loc. = LCCOMB_X35_Y16_N4; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux0~15'
+        Info: 231: + IC(0.300 ns) + CELL(0.322 ns) = 97.249 ns; Loc. = LCCOMB_X35_Y16_N6; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux0~16'
+        Info: 232: + IC(1.103 ns) + CELL(0.178 ns) = 98.530 ns; Loc. = LCCOMB_X30_Y16_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux0~17'
+        Info: 233: + IC(0.296 ns) + CELL(0.178 ns) = 99.004 ns; Loc. = LCCOMB_X30_Y16_N0; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux0~18'
+        Info: 234: + IC(0.298 ns) + CELL(0.178 ns) = 99.480 ns; Loc. = LCCOMB_X30_Y16_N18; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux0~19'
+        Info: 235: + IC(0.289 ns) + CELL(0.178 ns) = 99.947 ns; Loc. = LCCOMB_X30_Y16_N22; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux0~22'
+        Info: 236: + IC(1.156 ns) + CELL(0.178 ns) = 101.281 ns; Loc. = LCCOMB_X27_Y18_N16; Fanout = 4; COMB Node = 'Arkanoid:inst|Mux3~3'
+        Info: 237: + IC(0.337 ns) + CELL(0.322 ns) = 101.940 ns; Loc. = LCCOMB_X27_Y18_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|blue_~1'
+        Info: 238: + IC(0.522 ns) + CELL(0.413 ns) = 102.875 ns; Loc. = LCFF_X26_Y18_N11; Fanout = 1; REG Node = 'Arkanoid:inst|blue_[0]'
+        Info: Total cell delay = 50.265 ns ( 48.86 % )
+        Info: Total interconnect delay = 52.610 ns ( 51.14 % )
+    Info: - Smallest clock skew is -0.021 ns
+        Info: + Shortest clock path from clock "clk_50MHz" to destination register is 4.594 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clk_50MHz'
+            Info: 2: + IC(0.404 ns) + CELL(0.879 ns) = 2.309 ns; Loc. = LCFF_X1_Y13_N29; Fanout = 2; REG Node = 'Arkanoid:inst|clk25MHz_'
+            Info: 3: + IC(0.703 ns) + CELL(0.000 ns) = 3.012 ns; Loc. = CLKCTRL_G2; Fanout = 150; COMB Node = 'Arkanoid:inst|clk25MHz_~clkctrl'
+            Info: 4: + IC(0.980 ns) + CELL(0.602 ns) = 4.594 ns; Loc. = LCFF_X26_Y18_N11; Fanout = 1; REG Node = 'Arkanoid:inst|blue_[0]'
+            Info: Total cell delay = 2.507 ns ( 54.57 % )
+            Info: Total interconnect delay = 2.087 ns ( 45.43 % )
+        Info: - Longest clock path from clock "clk_50MHz" to source register is 4.615 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clk_50MHz'
+            Info: 2: + IC(0.404 ns) + CELL(0.879 ns) = 2.309 ns; Loc. = LCFF_X1_Y13_N29; Fanout = 2; REG Node = 'Arkanoid:inst|clk25MHz_'
+            Info: 3: + IC(0.703 ns) + CELL(0.000 ns) = 3.012 ns; Loc. = CLKCTRL_G2; Fanout = 150; COMB Node = 'Arkanoid:inst|clk25MHz_~clkctrl'
+            Info: 4: + IC(1.001 ns) + CELL(0.602 ns) = 4.615 ns; Loc. = LCFF_X14_Y11_N3; Fanout = 6; REG Node = 'Arkanoid:inst|h_counter[1]'
+            Info: Total cell delay = 2.507 ns ( 54.32 % )
+            Info: Total interconnect delay = 2.108 ns ( 45.68 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tsu for register "Arkanoid:inst|blue_[0]" (data pin = "button3", clock pin = "clk_50MHz") is 32.749 ns
+    Info: + Longest pin to register delay is 37.381 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.864 ns) = 0.864 ns; Loc. = PIN_R21; Fanout = 5; PIN Node = 'button3'
+        Info: 2: + IC(6.425 ns) + CELL(0.521 ns) = 7.810 ns; Loc. = LCCOMB_X34_Y21_N26; Fanout = 63; COMB Node = 'Arkanoid:inst|platform2_position~0'
+        Info: 3: + IC(0.990 ns) + CELL(0.495 ns) = 9.295 ns; Loc. = LCCOMB_X34_Y19_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~1'
+        Info: 4: + IC(0.000 ns) + CELL(0.080 ns) = 9.375 ns; Loc. = LCCOMB_X34_Y19_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~3'
+        Info: 5: + IC(0.000 ns) + CELL(0.080 ns) = 9.455 ns; Loc. = LCCOMB_X34_Y19_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~5'
+        Info: 6: + IC(0.000 ns) + CELL(0.080 ns) = 9.535 ns; Loc. = LCCOMB_X34_Y19_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~7'
+        Info: 7: + IC(0.000 ns) + CELL(0.080 ns) = 9.615 ns; Loc. = LCCOMB_X34_Y19_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~9'
+        Info: 8: + IC(0.000 ns) + CELL(0.080 ns) = 9.695 ns; Loc. = LCCOMB_X34_Y19_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~11'
+        Info: 9: + IC(0.000 ns) + CELL(0.080 ns) = 9.775 ns; Loc. = LCCOMB_X34_Y19_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~13'
+        Info: 10: + IC(0.000 ns) + CELL(0.174 ns) = 9.949 ns; Loc. = LCCOMB_X34_Y19_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~15'
+        Info: 11: + IC(0.000 ns) + CELL(0.080 ns) = 10.029 ns; Loc. = LCCOMB_X34_Y19_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~17'
+        Info: 12: + IC(0.000 ns) + CELL(0.080 ns) = 10.109 ns; Loc. = LCCOMB_X34_Y19_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~19'
+        Info: 13: + IC(0.000 ns) + CELL(0.080 ns) = 10.189 ns; Loc. = LCCOMB_X34_Y19_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~21'
+        Info: 14: + IC(0.000 ns) + CELL(0.080 ns) = 10.269 ns; Loc. = LCCOMB_X34_Y19_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~23'
+        Info: 15: + IC(0.000 ns) + CELL(0.080 ns) = 10.349 ns; Loc. = LCCOMB_X34_Y19_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~25'
+        Info: 16: + IC(0.000 ns) + CELL(0.080 ns) = 10.429 ns; Loc. = LCCOMB_X34_Y19_N26; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~27'
+        Info: 17: + IC(0.000 ns) + CELL(0.080 ns) = 10.509 ns; Loc. = LCCOMB_X34_Y19_N28; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~29'
+        Info: 18: + IC(0.000 ns) + CELL(0.161 ns) = 10.670 ns; Loc. = LCCOMB_X34_Y19_N30; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~31'
+        Info: 19: + IC(0.000 ns) + CELL(0.080 ns) = 10.750 ns; Loc. = LCCOMB_X34_Y18_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~33'
+        Info: 20: + IC(0.000 ns) + CELL(0.080 ns) = 10.830 ns; Loc. = LCCOMB_X34_Y18_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~35'
+        Info: 21: + IC(0.000 ns) + CELL(0.080 ns) = 10.910 ns; Loc. = LCCOMB_X34_Y18_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~37'
+        Info: 22: + IC(0.000 ns) + CELL(0.080 ns) = 10.990 ns; Loc. = LCCOMB_X34_Y18_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~39'
+        Info: 23: + IC(0.000 ns) + CELL(0.080 ns) = 11.070 ns; Loc. = LCCOMB_X34_Y18_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~41'
+        Info: 24: + IC(0.000 ns) + CELL(0.080 ns) = 11.150 ns; Loc. = LCCOMB_X34_Y18_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~43'
+        Info: 25: + IC(0.000 ns) + CELL(0.080 ns) = 11.230 ns; Loc. = LCCOMB_X34_Y18_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~45'
+        Info: 26: + IC(0.000 ns) + CELL(0.174 ns) = 11.404 ns; Loc. = LCCOMB_X34_Y18_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~47'
+        Info: 27: + IC(0.000 ns) + CELL(0.080 ns) = 11.484 ns; Loc. = LCCOMB_X34_Y18_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~49'
+        Info: 28: + IC(0.000 ns) + CELL(0.080 ns) = 11.564 ns; Loc. = LCCOMB_X34_Y18_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~51'
+        Info: 29: + IC(0.000 ns) + CELL(0.080 ns) = 11.644 ns; Loc. = LCCOMB_X34_Y18_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~53'
+        Info: 30: + IC(0.000 ns) + CELL(0.080 ns) = 11.724 ns; Loc. = LCCOMB_X34_Y18_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|Add4~55'
+        Info: 31: + IC(0.000 ns) + CELL(0.458 ns) = 12.182 ns; Loc. = LCCOMB_X34_Y18_N24; Fanout = 4; COMB Node = 'Arkanoid:inst|Add4~56'
+        Info: 32: + IC(0.917 ns) + CELL(0.455 ns) = 13.554 ns; Loc. = LCCOMB_X34_Y17_N16; Fanout = 1; COMB Node = 'Arkanoid:inst|LessThan3~8'
+        Info: 33: + IC(1.760 ns) + CELL(0.178 ns) = 15.492 ns; Loc. = LCCOMB_X35_Y19_N18; Fanout = 1; COMB Node = 'Arkanoid:inst|LessThan3~9'
+        Info: 34: + IC(0.293 ns) + CELL(0.521 ns) = 16.306 ns; Loc. = LCCOMB_X35_Y19_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|LessThan3~10'
+        Info: 35: + IC(0.884 ns) + CELL(0.495 ns) = 17.685 ns; Loc. = LCCOMB_X34_Y15_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~9'
+        Info: 36: + IC(0.000 ns) + CELL(0.080 ns) = 17.765 ns; Loc. = LCCOMB_X34_Y15_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~11'
+        Info: 37: + IC(0.000 ns) + CELL(0.080 ns) = 17.845 ns; Loc. = LCCOMB_X34_Y15_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~13'
+        Info: 38: + IC(0.000 ns) + CELL(0.080 ns) = 17.925 ns; Loc. = LCCOMB_X34_Y15_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~15'
+        Info: 39: + IC(0.000 ns) + CELL(0.080 ns) = 18.005 ns; Loc. = LCCOMB_X34_Y15_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~17'
+        Info: 40: + IC(0.000 ns) + CELL(0.080 ns) = 18.085 ns; Loc. = LCCOMB_X34_Y15_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~19'
+        Info: 41: + IC(0.000 ns) + CELL(0.080 ns) = 18.165 ns; Loc. = LCCOMB_X34_Y15_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~24'
+        Info: 42: + IC(0.000 ns) + CELL(0.174 ns) = 18.339 ns; Loc. = LCCOMB_X34_Y15_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~27'
+        Info: 43: + IC(0.000 ns) + CELL(0.080 ns) = 18.419 ns; Loc. = LCCOMB_X34_Y15_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~30'
+        Info: 44: + IC(0.000 ns) + CELL(0.080 ns) = 18.499 ns; Loc. = LCCOMB_X34_Y15_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~33'
+        Info: 45: + IC(0.000 ns) + CELL(0.080 ns) = 18.579 ns; Loc. = LCCOMB_X34_Y15_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~36'
+        Info: 46: + IC(0.000 ns) + CELL(0.080 ns) = 18.659 ns; Loc. = LCCOMB_X34_Y15_N22; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~39'
+        Info: 47: + IC(0.000 ns) + CELL(0.080 ns) = 18.739 ns; Loc. = LCCOMB_X34_Y15_N24; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~42'
+        Info: 48: + IC(0.000 ns) + CELL(0.080 ns) = 18.819 ns; Loc. = LCCOMB_X34_Y15_N26; Fanout = 2; COMB Node = 'Arkanoid:inst|Add5~45'
+        Info: 49: + IC(0.000 ns) + CELL(0.458 ns) = 19.277 ns; Loc. = LCCOMB_X34_Y15_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|Add5~47'
+        Info: 50: + IC(1.717 ns) + CELL(0.545 ns) = 21.539 ns; Loc. = LCCOMB_X34_Y21_N0; Fanout = 4; COMB Node = 'Arkanoid:inst|Add5~49'
+        Info: 51: + IC(1.176 ns) + CELL(0.517 ns) = 23.232 ns; Loc. = LCCOMB_X29_Y20_N26; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~23'
+        Info: 52: + IC(0.000 ns) + CELL(0.080 ns) = 23.312 ns; Loc. = LCCOMB_X29_Y20_N28; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~25'
+        Info: 53: + IC(0.000 ns) + CELL(0.161 ns) = 23.473 ns; Loc. = LCCOMB_X29_Y20_N30; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~27'
+        Info: 54: + IC(0.000 ns) + CELL(0.080 ns) = 23.553 ns; Loc. = LCCOMB_X29_Y19_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~29'
+        Info: 55: + IC(0.000 ns) + CELL(0.080 ns) = 23.633 ns; Loc. = LCCOMB_X29_Y19_N2; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~31'
+        Info: 56: + IC(0.000 ns) + CELL(0.080 ns) = 23.713 ns; Loc. = LCCOMB_X29_Y19_N4; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~33'
+        Info: 57: + IC(0.000 ns) + CELL(0.080 ns) = 23.793 ns; Loc. = LCCOMB_X29_Y19_N6; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~35'
+        Info: 58: + IC(0.000 ns) + CELL(0.080 ns) = 23.873 ns; Loc. = LCCOMB_X29_Y19_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~37'
+        Info: 59: + IC(0.000 ns) + CELL(0.080 ns) = 23.953 ns; Loc. = LCCOMB_X29_Y19_N10; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~39'
+        Info: 60: + IC(0.000 ns) + CELL(0.080 ns) = 24.033 ns; Loc. = LCCOMB_X29_Y19_N12; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~41'
+        Info: 61: + IC(0.000 ns) + CELL(0.174 ns) = 24.207 ns; Loc. = LCCOMB_X29_Y19_N14; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~43'
+        Info: 62: + IC(0.000 ns) + CELL(0.080 ns) = 24.287 ns; Loc. = LCCOMB_X29_Y19_N16; Fanout = 2; COMB Node = 'Arkanoid:inst|Add6~45'
+        Info: 63: + IC(0.000 ns) + CELL(0.458 ns) = 24.745 ns; Loc. = LCCOMB_X29_Y19_N18; Fanout = 1; COMB Node = 'Arkanoid:inst|Add6~46'
+        Info: 64: + IC(1.551 ns) + CELL(0.455 ns) = 26.751 ns; Loc. = LCCOMB_X30_Y19_N20; Fanout = 2; COMB Node = 'Arkanoid:inst|LessThan29~6'
+        Info: 65: + IC(0.300 ns) + CELL(0.322 ns) = 27.373 ns; Loc. = LCCOMB_X30_Y19_N22; Fanout = 15; COMB Node = 'Arkanoid:inst|LessThan29~8'
+        Info: 66: + IC(1.593 ns) + CELL(0.178 ns) = 29.144 ns; Loc. = LCCOMB_X32_Y15_N16; Fanout = 16; COMB Node = 'Arkanoid:inst|LessThan29~10'
+        Info: 67: + IC(0.994 ns) + CELL(0.545 ns) = 30.683 ns; Loc. = LCCOMB_X32_Y17_N22; Fanout = 1; COMB Node = 'Arkanoid:inst|always3~38'
+        Info: 68: + IC(0.297 ns) + CELL(0.521 ns) = 31.501 ns; Loc. = LCCOMB_X32_Y17_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|always3~39'
+        Info: 69: + IC(0.787 ns) + CELL(0.485 ns) = 32.773 ns; Loc. = LCCOMB_X32_Y17_N14; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux2~15'
+        Info: 70: + IC(0.889 ns) + CELL(0.322 ns) = 33.984 ns; Loc. = LCCOMB_X31_Y18_N2; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux2~16'
+        Info: 71: + IC(0.297 ns) + CELL(0.178 ns) = 34.459 ns; Loc. = LCCOMB_X31_Y18_N28; Fanout = 1; COMB Node = 'Arkanoid:inst|Mux2~19'
+        Info: 72: + IC(0.798 ns) + CELL(0.322 ns) = 35.579 ns; Loc. = LCCOMB_X27_Y18_N20; Fanout = 4; COMB Node = 'Arkanoid:inst|Mux3~1'
+        Info: 73: + IC(0.354 ns) + CELL(0.513 ns) = 36.446 ns; Loc. = LCCOMB_X27_Y18_N8; Fanout = 2; COMB Node = 'Arkanoid:inst|blue_~1'
+        Info: 74: + IC(0.522 ns) + CELL(0.413 ns) = 37.381 ns; Loc. = LCFF_X26_Y18_N11; Fanout = 1; REG Node = 'Arkanoid:inst|blue_[0]'
+        Info: Total cell delay = 14.837 ns ( 39.69 % )
+        Info: Total interconnect delay = 22.544 ns ( 60.31 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "clk_50MHz" to destination register is 4.594 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clk_50MHz'
+        Info: 2: + IC(0.404 ns) + CELL(0.879 ns) = 2.309 ns; Loc. = LCFF_X1_Y13_N29; Fanout = 2; REG Node = 'Arkanoid:inst|clk25MHz_'
+        Info: 3: + IC(0.703 ns) + CELL(0.000 ns) = 3.012 ns; Loc. = CLKCTRL_G2; Fanout = 150; COMB Node = 'Arkanoid:inst|clk25MHz_~clkctrl'
+        Info: 4: + IC(0.980 ns) + CELL(0.602 ns) = 4.594 ns; Loc. = LCFF_X26_Y18_N11; Fanout = 1; REG Node = 'Arkanoid:inst|blue_[0]'
+        Info: Total cell delay = 2.507 ns ( 54.57 % )
+        Info: Total interconnect delay = 2.087 ns ( 45.43 % )
+Info: tco from clock "clk_50MHz" to destination pin "v_sync" through register "Arkanoid:inst|v_counter[8]" is 15.668 ns
+    Info: + Longest clock path from clock "clk_50MHz" to source register is 4.602 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clk_50MHz'
+        Info: 2: + IC(0.404 ns) + CELL(0.879 ns) = 2.309 ns; Loc. = LCFF_X1_Y13_N29; Fanout = 2; REG Node = 'Arkanoid:inst|clk25MHz_'
+        Info: 3: + IC(0.703 ns) + CELL(0.000 ns) = 3.012 ns; Loc. = CLKCTRL_G2; Fanout = 150; COMB Node = 'Arkanoid:inst|clk25MHz_~clkctrl'
+        Info: 4: + IC(0.988 ns) + CELL(0.602 ns) = 4.602 ns; Loc. = LCFF_X15_Y13_N17; Fanout = 5; REG Node = 'Arkanoid:inst|v_counter[8]'
+        Info: Total cell delay = 2.507 ns ( 54.48 % )
+        Info: Total interconnect delay = 2.095 ns ( 45.52 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 10.789 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X15_Y13_N17; Fanout = 5; REG Node = 'Arkanoid:inst|v_counter[8]'
+        Info: 2: + IC(0.606 ns) + CELL(0.451 ns) = 1.057 ns; Loc. = LCCOMB_X15_Y13_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|LessThan132~0'
+        Info: 3: + IC(1.837 ns) + CELL(0.322 ns) = 3.216 ns; Loc. = LCCOMB_X15_Y14_N0; Fanout = 2; COMB Node = 'Arkanoid:inst|Equal1~7'
+        Info: 4: + IC(0.311 ns) + CELL(0.178 ns) = 3.705 ns; Loc. = LCCOMB_X15_Y14_N18; Fanout = 2; COMB Node = 'Arkanoid:inst|Equal2~0'
+        Info: 5: + IC(1.225 ns) + CELL(0.507 ns) = 5.437 ns; Loc. = LCCOMB_X18_Y11_N24; Fanout = 1; COMB Node = 'Arkanoid:inst|Equal2~1'
+        Info: 6: + IC(2.376 ns) + CELL(2.976 ns) = 10.789 ns; Loc. = PIN_B11; Fanout = 0; PIN Node = 'v_sync'
+        Info: Total cell delay = 4.434 ns ( 41.10 % )
+        Info: Total interconnect delay = 6.355 ns ( 58.90 % )
+Info: th for register "Arkanoid:inst|platform1_position[29]" (data pin = "button2", clock pin = "clk_50MHz") is -2.062 ns
+    Info: + Longest clock path from clock "clk_50MHz" to destination register is 4.609 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_L1; Fanout = 1; CLK Node = 'clk_50MHz'
+        Info: 2: + IC(0.404 ns) + CELL(0.879 ns) = 2.309 ns; Loc. = LCFF_X1_Y13_N29; Fanout = 2; REG Node = 'Arkanoid:inst|clk25MHz_'
+        Info: 3: + IC(0.703 ns) + CELL(0.000 ns) = 3.012 ns; Loc. = CLKCTRL_G2; Fanout = 150; COMB Node = 'Arkanoid:inst|clk25MHz_~clkctrl'
+        Info: 4: + IC(0.995 ns) + CELL(0.602 ns) = 4.609 ns; Loc. = LCFF_X31_Y12_N9; Fanout = 3; REG Node = 'Arkanoid:inst|platform1_position[29]'
+        Info: Total cell delay = 2.507 ns ( 54.39 % )
+        Info: Total interconnect delay = 2.102 ns ( 45.61 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 6.957 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.874 ns) = 0.874 ns; Loc. = PIN_T22; Fanout = 36; PIN Node = 'button2'
+        Info: 2: + IC(5.809 ns) + CELL(0.178 ns) = 6.861 ns; Loc. = LCCOMB_X31_Y12_N8; Fanout = 4; COMB Node = 'Arkanoid:inst|Add3~71'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 6.957 ns; Loc. = LCFF_X31_Y12_N9; Fanout = 3; REG Node = 'Arkanoid:inst|platform1_position[29]'
+        Info: Total cell delay = 1.148 ns ( 16.50 % )
+        Info: Total interconnect delay = 5.809 ns ( 83.50 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 166 megabytes
+    Info: Processing ended: Mon May 21 19:54:43 2012
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:06
+
+
