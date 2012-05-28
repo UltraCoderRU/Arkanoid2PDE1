@@ -1,5 +1,5 @@
 Simulator report for myArkanoid
-Mon May 21 14:05:52 2012
+Tue May 22 17:24:20 2012
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -38,20 +38,11 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------+
-; Simulator Summary                          ;
-+-----------------------------+--------------+
-; Type                        ; Value        ;
-+-----------------------------+--------------+
-; Simulation Start Time       ; 0 ps         ;
-; Simulation End Time         ; 50.0 ms      ;
-; Simulation Netlist Size     ; 67 nodes     ;
-; Simulation Coverage         ;       0.00 % ;
-; Total Number of Transitions ; 0            ;
-; Simulation Breakpoints      ; 0            ;
-; Family                      ; Cyclone II   ;
-; Device                      ; EP2C20F484C7 ;
-+-----------------------------+--------------+
++-------------------+
+; Simulator Summary ;
++------+------------+
+; Type ; Value      ;
++------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -90,19 +81,11 @@ Waveform report data cannot be output to ASCII.
 Please use Quartus II to view the waveform report data.
 
 
-+--------------------------------------------------------------------+
-; Coverage Summary                                                   ;
-+-----------------------------------------------------+--------------+
-; Type                                                ; Value        ;
-+-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;       0.00 % ;
-; Total nodes checked                                 ; 67           ;
-; Total output ports checked                          ; 62           ;
-; Total output ports with complete 1/0-value coverage ; 0            ;
-; Total output ports with no 1/0-value coverage       ; 62           ;
-; Total output ports with no 1-value coverage         ; 62           ;
-; Total output ports with no 0-value coverage         ; 62           ;
-+-----------------------------------------------------+--------------+
++------------------+
+; Coverage Summary ;
++------+-----------+
+; Type ; Value     ;
++------+-----------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
@@ -114,145 +97,19 @@ The following table displays output ports that toggle between 1 and 0 during sim
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+------------------------------------------------------------------+
-; Missing 1-Value Coverage                                         ;
-+-----------------------+-----------------------+------------------+
-; Node Name             ; Output Port Name      ; Output Port Type ;
-+-----------------------+-----------------------+------------------+
-; |TotalScheme|h_sync   ; |TotalScheme|h_sync   ; padio            ;
-; |TotalScheme|v_sync   ; |TotalScheme|v_sync   ; padio            ;
-; |TotalScheme|blue[3]  ; |TotalScheme|blue[3]  ; padio            ;
-; |TotalScheme|blue[2]  ; |TotalScheme|blue[2]  ; padio            ;
-; |TotalScheme|blue[1]  ; |TotalScheme|blue[1]  ; padio            ;
-; |TotalScheme|blue[0]  ; |TotalScheme|blue[0]  ; padio            ;
-; |TotalScheme|green[3] ; |TotalScheme|green[3] ; padio            ;
-; |TotalScheme|green[2] ; |TotalScheme|green[2] ; padio            ;
-; |TotalScheme|green[1] ; |TotalScheme|green[1] ; padio            ;
-; |TotalScheme|green[0] ; |TotalScheme|green[0] ; padio            ;
-; |TotalScheme|hort[9]  ; |TotalScheme|hort[9]  ; padio            ;
-; |TotalScheme|hort[8]  ; |TotalScheme|hort[8]  ; padio            ;
-; |TotalScheme|hort[7]  ; |TotalScheme|hort[7]  ; padio            ;
-; |TotalScheme|hort[6]  ; |TotalScheme|hort[6]  ; padio            ;
-; |TotalScheme|hort[5]  ; |TotalScheme|hort[5]  ; padio            ;
-; |TotalScheme|hort[4]  ; |TotalScheme|hort[4]  ; padio            ;
-; |TotalScheme|hort[3]  ; |TotalScheme|hort[3]  ; padio            ;
-; |TotalScheme|hort[2]  ; |TotalScheme|hort[2]  ; padio            ;
-; |TotalScheme|hort[1]  ; |TotalScheme|hort[1]  ; padio            ;
-; |TotalScheme|hort[0]  ; |TotalScheme|hort[0]  ; padio            ;
-; |TotalScheme|led1[6]  ; |TotalScheme|led1[6]  ; padio            ;
-; |TotalScheme|led1[5]  ; |TotalScheme|led1[5]  ; padio            ;
-; |TotalScheme|led1[4]  ; |TotalScheme|led1[4]  ; padio            ;
-; |TotalScheme|led1[3]  ; |TotalScheme|led1[3]  ; padio            ;
-; |TotalScheme|led1[2]  ; |TotalScheme|led1[2]  ; padio            ;
-; |TotalScheme|led1[1]  ; |TotalScheme|led1[1]  ; padio            ;
-; |TotalScheme|led1[0]  ; |TotalScheme|led1[0]  ; padio            ;
-; |TotalScheme|led2[6]  ; |TotalScheme|led2[6]  ; padio            ;
-; |TotalScheme|led2[5]  ; |TotalScheme|led2[5]  ; padio            ;
-; |TotalScheme|led2[4]  ; |TotalScheme|led2[4]  ; padio            ;
-; |TotalScheme|led2[3]  ; |TotalScheme|led2[3]  ; padio            ;
-; |TotalScheme|led2[2]  ; |TotalScheme|led2[2]  ; padio            ;
-; |TotalScheme|led2[1]  ; |TotalScheme|led2[1]  ; padio            ;
-; |TotalScheme|led2[0]  ; |TotalScheme|led2[0]  ; padio            ;
-; |TotalScheme|led3[6]  ; |TotalScheme|led3[6]  ; padio            ;
-; |TotalScheme|led3[5]  ; |TotalScheme|led3[5]  ; padio            ;
-; |TotalScheme|led3[4]  ; |TotalScheme|led3[4]  ; padio            ;
-; |TotalScheme|led3[3]  ; |TotalScheme|led3[3]  ; padio            ;
-; |TotalScheme|led3[2]  ; |TotalScheme|led3[2]  ; padio            ;
-; |TotalScheme|led3[1]  ; |TotalScheme|led3[1]  ; padio            ;
-; |TotalScheme|led3[0]  ; |TotalScheme|led3[0]  ; padio            ;
-; |TotalScheme|led4[6]  ; |TotalScheme|led4[6]  ; padio            ;
-; |TotalScheme|led4[5]  ; |TotalScheme|led4[5]  ; padio            ;
-; |TotalScheme|led4[4]  ; |TotalScheme|led4[4]  ; padio            ;
-; |TotalScheme|led4[3]  ; |TotalScheme|led4[3]  ; padio            ;
-; |TotalScheme|led4[2]  ; |TotalScheme|led4[2]  ; padio            ;
-; |TotalScheme|led4[1]  ; |TotalScheme|led4[1]  ; padio            ;
-; |TotalScheme|led4[0]  ; |TotalScheme|led4[0]  ; padio            ;
-; |TotalScheme|red[3]   ; |TotalScheme|red[3]   ; padio            ;
-; |TotalScheme|red[2]   ; |TotalScheme|red[2]   ; padio            ;
-; |TotalScheme|red[1]   ; |TotalScheme|red[1]   ; padio            ;
-; |TotalScheme|red[0]   ; |TotalScheme|red[0]   ; padio            ;
-; |TotalScheme|vert[9]  ; |TotalScheme|vert[9]  ; padio            ;
-; |TotalScheme|vert[8]  ; |TotalScheme|vert[8]  ; padio            ;
-; |TotalScheme|vert[7]  ; |TotalScheme|vert[7]  ; padio            ;
-; |TotalScheme|vert[6]  ; |TotalScheme|vert[6]  ; padio            ;
-; |TotalScheme|vert[5]  ; |TotalScheme|vert[5]  ; padio            ;
-; |TotalScheme|vert[4]  ; |TotalScheme|vert[4]  ; padio            ;
-; |TotalScheme|vert[3]  ; |TotalScheme|vert[3]  ; padio            ;
-; |TotalScheme|vert[2]  ; |TotalScheme|vert[2]  ; padio            ;
-; |TotalScheme|vert[1]  ; |TotalScheme|vert[1]  ; padio            ;
-; |TotalScheme|vert[0]  ; |TotalScheme|vert[0]  ; padio            ;
-+-----------------------+-----------------------+------------------+
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+------------------------------------------------------------------+
-; Missing 0-Value Coverage                                         ;
-+-----------------------+-----------------------+------------------+
-; Node Name             ; Output Port Name      ; Output Port Type ;
-+-----------------------+-----------------------+------------------+
-; |TotalScheme|h_sync   ; |TotalScheme|h_sync   ; padio            ;
-; |TotalScheme|v_sync   ; |TotalScheme|v_sync   ; padio            ;
-; |TotalScheme|blue[3]  ; |TotalScheme|blue[3]  ; padio            ;
-; |TotalScheme|blue[2]  ; |TotalScheme|blue[2]  ; padio            ;
-; |TotalScheme|blue[1]  ; |TotalScheme|blue[1]  ; padio            ;
-; |TotalScheme|blue[0]  ; |TotalScheme|blue[0]  ; padio            ;
-; |TotalScheme|green[3] ; |TotalScheme|green[3] ; padio            ;
-; |TotalScheme|green[2] ; |TotalScheme|green[2] ; padio            ;
-; |TotalScheme|green[1] ; |TotalScheme|green[1] ; padio            ;
-; |TotalScheme|green[0] ; |TotalScheme|green[0] ; padio            ;
-; |TotalScheme|hort[9]  ; |TotalScheme|hort[9]  ; padio            ;
-; |TotalScheme|hort[8]  ; |TotalScheme|hort[8]  ; padio            ;
-; |TotalScheme|hort[7]  ; |TotalScheme|hort[7]  ; padio            ;
-; |TotalScheme|hort[6]  ; |TotalScheme|hort[6]  ; padio            ;
-; |TotalScheme|hort[5]  ; |TotalScheme|hort[5]  ; padio            ;
-; |TotalScheme|hort[4]  ; |TotalScheme|hort[4]  ; padio            ;
-; |TotalScheme|hort[3]  ; |TotalScheme|hort[3]  ; padio            ;
-; |TotalScheme|hort[2]  ; |TotalScheme|hort[2]  ; padio            ;
-; |TotalScheme|hort[1]  ; |TotalScheme|hort[1]  ; padio            ;
-; |TotalScheme|hort[0]  ; |TotalScheme|hort[0]  ; padio            ;
-; |TotalScheme|led1[6]  ; |TotalScheme|led1[6]  ; padio            ;
-; |TotalScheme|led1[5]  ; |TotalScheme|led1[5]  ; padio            ;
-; |TotalScheme|led1[4]  ; |TotalScheme|led1[4]  ; padio            ;
-; |TotalScheme|led1[3]  ; |TotalScheme|led1[3]  ; padio            ;
-; |TotalScheme|led1[2]  ; |TotalScheme|led1[2]  ; padio            ;
-; |TotalScheme|led1[1]  ; |TotalScheme|led1[1]  ; padio            ;
-; |TotalScheme|led1[0]  ; |TotalScheme|led1[0]  ; padio            ;
-; |TotalScheme|led2[6]  ; |TotalScheme|led2[6]  ; padio            ;
-; |TotalScheme|led2[5]  ; |TotalScheme|led2[5]  ; padio            ;
-; |TotalScheme|led2[4]  ; |TotalScheme|led2[4]  ; padio            ;
-; |TotalScheme|led2[3]  ; |TotalScheme|led2[3]  ; padio            ;
-; |TotalScheme|led2[2]  ; |TotalScheme|led2[2]  ; padio            ;
-; |TotalScheme|led2[1]  ; |TotalScheme|led2[1]  ; padio            ;
-; |TotalScheme|led2[0]  ; |TotalScheme|led2[0]  ; padio            ;
-; |TotalScheme|led3[6]  ; |TotalScheme|led3[6]  ; padio            ;
-; |TotalScheme|led3[5]  ; |TotalScheme|led3[5]  ; padio            ;
-; |TotalScheme|led3[4]  ; |TotalScheme|led3[4]  ; padio            ;
-; |TotalScheme|led3[3]  ; |TotalScheme|led3[3]  ; padio            ;
-; |TotalScheme|led3[2]  ; |TotalScheme|led3[2]  ; padio            ;
-; |TotalScheme|led3[1]  ; |TotalScheme|led3[1]  ; padio            ;
-; |TotalScheme|led3[0]  ; |TotalScheme|led3[0]  ; padio            ;
-; |TotalScheme|led4[6]  ; |TotalScheme|led4[6]  ; padio            ;
-; |TotalScheme|led4[5]  ; |TotalScheme|led4[5]  ; padio            ;
-; |TotalScheme|led4[4]  ; |TotalScheme|led4[4]  ; padio            ;
-; |TotalScheme|led4[3]  ; |TotalScheme|led4[3]  ; padio            ;
-; |TotalScheme|led4[2]  ; |TotalScheme|led4[2]  ; padio            ;
-; |TotalScheme|led4[1]  ; |TotalScheme|led4[1]  ; padio            ;
-; |TotalScheme|led4[0]  ; |TotalScheme|led4[0]  ; padio            ;
-; |TotalScheme|red[3]   ; |TotalScheme|red[3]   ; padio            ;
-; |TotalScheme|red[2]   ; |TotalScheme|red[2]   ; padio            ;
-; |TotalScheme|red[1]   ; |TotalScheme|red[1]   ; padio            ;
-; |TotalScheme|red[0]   ; |TotalScheme|red[0]   ; padio            ;
-; |TotalScheme|vert[9]  ; |TotalScheme|vert[9]  ; padio            ;
-; |TotalScheme|vert[8]  ; |TotalScheme|vert[8]  ; padio            ;
-; |TotalScheme|vert[7]  ; |TotalScheme|vert[7]  ; padio            ;
-; |TotalScheme|vert[6]  ; |TotalScheme|vert[6]  ; padio            ;
-; |TotalScheme|vert[5]  ; |TotalScheme|vert[5]  ; padio            ;
-; |TotalScheme|vert[4]  ; |TotalScheme|vert[4]  ; padio            ;
-; |TotalScheme|vert[3]  ; |TotalScheme|vert[3]  ; padio            ;
-; |TotalScheme|vert[2]  ; |TotalScheme|vert[2]  ; padio            ;
-; |TotalScheme|vert[1]  ; |TotalScheme|vert[1]  ; padio            ;
-; |TotalScheme|vert[0]  ; |TotalScheme|vert[0]  ; padio            ;
-+-----------------------+-----------------------+------------------+
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
 
 
 +---------------------+
@@ -268,22 +125,14 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon May 21 14:02:19 2012
+    Info: Processing started: Tue May 22 17:24:20 2012
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off myArkanoid -c myArkanoid
-Info: Using vector source file "C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.vwf"
-Warning: Can't find signal in vector source file for input pin "|TotalScheme|button1"
-Warning: Can't find signal in vector source file for input pin "|TotalScheme|button2"
-Warning: Can't find signal in vector source file for input pin "|TotalScheme|button3"
-Warning: Can't find signal in vector source file for input pin "|TotalScheme|button4"
-Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
-    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
-Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is       0.00 %
-Info: Number of transitions in simulation is 0
-Info: Quartus II Simulator was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 136 megabytes
-    Info: Processing ended: Mon May 21 14:05:53 2012
-    Info: Elapsed time: 00:03:34
-    Info: Total CPU time (on all processors): 00:03:34
+Info: Can't find specified vector source file "G:/Verilog/Arkanoid2PDE1/myArkanoid.vwf"
+Error: No valid vector source file specified and default file "G:/Verilog/Arkanoid2PDE1/myArkanoid.cvwf" does not exist
+Error: Quartus II Simulator was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 144 megabytes
+    Error: Processing ended: Tue May 22 17:24:20 2012
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:01
 
 

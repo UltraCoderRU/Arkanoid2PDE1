@@ -1,5 +1,5 @@
 Assembler report for myArkanoid
-Mon May 21 19:54:38 2012
+Mon May 28 14:22:31 2012
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -10,8 +10,8 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.sof
-  6. Assembler Device Options: C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.pof
+  5. Assembler Device Options: G:/Verilog/Arkanoid2PDE1/myArkanoid.sof
+  6. Assembler Device Options: G:/Verilog/Arkanoid2PDE1/myArkanoid.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon May 21 19:54:38 2012 ;
+; Assembler Status      ; Successful - Mon May 28 14:22:31 2012 ;
 ; Revision Name         ; myArkanoid                            ;
 ; Top-level Entity Name ; TotalScheme                           ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+---------------------------------------------------------------------+
-; Assembler Generated Files                                           ;
-+---------------------------------------------------------------------+
-; File Name                                                           ;
-+---------------------------------------------------------------------+
-; C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.sof ;
-; C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.pof ;
-+---------------------------------------------------------------------+
++-----------------------------------------+
+; Assembler Generated Files               ;
++-----------------------------------------+
+; File Name                               ;
++-----------------------------------------+
+; G:/Verilog/Arkanoid2PDE1/myArkanoid.sof ;
+; G:/Verilog/Arkanoid2PDE1/myArkanoid.pof ;
++-----------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.sof ;
-+----------------+------------------------------------------------------------------------------+
-; Option         ; Setting                                                                      ;
-+----------------+------------------------------------------------------------------------------+
-; Device         ; EP2C20F484C7                                                                 ;
-; JTAG usercode  ; 0xFFFFFFFF                                                                   ;
-; Checksum       ; 0x002DEAD6                                                                   ;
-+----------------+------------------------------------------------------------------------------+
++-------------------------------------------------------------------+
+; Assembler Device Options: G:/Verilog/Arkanoid2PDE1/myArkanoid.sof ;
++----------------+--------------------------------------------------+
+; Option         ; Setting                                          ;
++----------------+--------------------------------------------------+
+; Device         ; EP2C20F484C7                                     ;
+; JTAG usercode  ; 0xFFFFFFFF                                       ;
+; Checksum       ; 0x006B4B07                                       ;
++----------------+--------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.pof ;
-+--------------------+--------------------------------------------------------------------------+
-; Option             ; Setting                                                                  ;
-+--------------------+--------------------------------------------------------------------------+
-; Device             ; EPCS16                                                                   ;
-; JTAG usercode      ; 0x00000000                                                               ;
-; Checksum           ; 0x1DBBF76B                                                               ;
-; Compression Ratio  ; 2                                                                        ;
-+--------------------+--------------------------------------------------------------------------+
++-------------------------------------------------------------------+
+; Assembler Device Options: G:/Verilog/Arkanoid2PDE1/myArkanoid.pof ;
++--------------------+----------------------------------------------+
+; Option             ; Setting                                      ;
++--------------------+----------------------------------------------+
+; Device             ; EPCS16                                       ;
+; JTAG usercode      ; 0x00000000                                   ;
+; Checksum           ; 0x1D6A557A                                   ;
+; Compression Ratio  ; 2                                            ;
++--------------------+----------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon May 21 19:54:35 2012
+    Info: Processing started: Mon May 28 14:22:29 2012
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off myArkanoid -c myArkanoid
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 207 megabytes
-    Info: Processing ended: Mon May 21 19:54:38 2012
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 219 megabytes
+    Info: Processing ended: Mon May 28 14:22:31 2012
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

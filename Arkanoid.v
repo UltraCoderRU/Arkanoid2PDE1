@@ -1,187 +1,36 @@
 module Arkanoid
 
-#(
-	// Parameters
-	parameter SCREEN_WIDTH = 640,       // Horizontal screen resolution (in pixels)
-	parameter SCREEN_HEIGHT = 480,      // Vertical screen resolution (in pixels)
-	
-	parameter CELL_SIZE = 20,           // 1 cell has size of 20x20 pixels.
-	
-	parameter BALL_SIZE = 1,            // Game ball is a square of side 1 cell
-	parameter BALL_SPEED = 2,           // Number of cells per second
-	
-	parameter PLATFORM_WIDTH = 8,       // Game platform width
-	parameter PLATFORM_SPEED = 1,       // Number of cells per second
-	
-	parameter [3:0] BK_COLOR_R = 4'b1111,       // Red background
-	parameter [3:0] BK_COLOR_G = 4'b0000,
-	parameter [3:0] BK_COLOR_B = 4'b0000,
-	
-	parameter [3:0] STABLE_COLOR_R = 4'b0011,  // ??? color :)
-	parameter [3:0] STABLE_COLOR_G = 4'b1100,
-	parameter [3:0] STABLE_COLOR_B = 4'b0110,
-	
-	parameter [3:0] BALL_COLOR_R = 4'b0000,     // Blue ball
-	parameter [3:0] BALL_COLOR_G = 4'b0000,
-	parameter [3:0] BALL_COLOR_B = 4'b1111,
-	
-	parameter [3:0] PLATFORM_COLOR_R = 4'b1111, // Red platforms
-	parameter [3:0] PLATFORM_COLOR_G = 4'b0000,
-	parameter [3:0] PLATFORM_COLOR_B = 4'b0000
-)
+	`include "arkanoid_header.v"
+	`include "int_to_digital.v"
+	`include "vga_sync.v"
 
-(
-	// Input Ports
-	input clk50MHz, // 50 MHz clock on DE1
-	input button1, button2, button3, button4, // 4 buttons on DE1 (left<->right for 2 players)
-
-	// Output Ports
-	output h_sync,
-	output v_sync,
-	output [3:0] red, green, blue, // Current pixel color (4096 colors = 12 bit)
-	output [6:0] num1, num2, num3, num4, // Digital LED's on DE1
-	output [7:0] led
-);
-	
-	//////////////////////////////////////
-	// **** BEGIN OF MODULE HEADER **** //
-	//////////////////////////////////////
-	
-	// Output registers
-	reg [3:0] red_, green_, blue_;
-	reg [6:0] num1_, num2_, num3_, num4_;
-	reg [7:0] led_;
-	
-	localparam FIELD_WIDTH = SCREEN_WIDTH/CELL_SIZE;   // Horizontal screen resolution (in cells)
-	localparam FIELD_HEIGHT = SCREEN_HEIGHT/CELL_SIZE; // Vertical screen resolution (in cells)
-	
-	// VGA Module
-	localparam line = 799;
-	localparam frame = 524;
-	
-	// 25 MHz clock
-	reg clk25MHz_;
-	wire clk25MHz;
-	
-	// 2D array of cells, stores game field state
-	reg [1:0] field[0:FIELD_HEIGHT-1][0:FIELD_WIDTH-1];
-	
-	// Possible cell values: (no comments)
-	localparam [1:0] EMPTY_CELL    = 2'b00;
-	localparam [1:0] STABLE_CELL   = 2'b11;
-	localparam [1:0] BALL_CELL     = 2'b01;
-	localparam [1:0] PLATFORM_CELL = 2'b10;
-	
-	// ATTENTION!!!
-	// All definitions below are in cells only.
-	//
-	
-	// Informaton about game ball
-	integer   ball_position_x; // Current coordinates
-	integer   ball_position_y; 
-	reg 	  ball_state;      // Current state (0 - stopped, 1 - moving)
-	reg [1:0] ball_direction;  // Current moving direction
-	
-	// Possible ball directions:
-	localparam [1:0] LEFT_UP    = 2'b00;
-	localparam [1:0] RIGHT_UP   = 2'b01;
-	localparam [1:0] LEFT_DOWN  = 2'b10;
-	localparam [1:0] RIGHT_DOWN = 2'b11;
-	
-	// Information about game platforms
-	integer platform1_position; // Current position (X axis, left border coordinate)
-	integer platform2_position; 
-	
-	// VGA variables
-	integer h_counter; // Horizontal pixel counter
-	integer v_counter; // Vertical pixel counter
-	integer h_cell;    // Horizontal cell counter
-	integer v_cell;    // Vertical cell counter
-	reg [1:0] current_cell; // Current cell value
-	
-	// Loops variables
-	integer i, j;
-		
-	// Last buttons state
-	reg button1_state;
-	reg button2_state;
-	reg button3_state;
-	reg button4_state;
-	
-	
-	////////////////////////////////////
-	// **** END OF MODULE HEADER **** //
-	////////////////////////////////////
-
-	// Initialization of all module variables
-	initial
+	task GameRestart;
 	begin
-		
-		// Place ball to the center of the screen
-		ball_position_x = FIELD_WIDTH/2;
-		ball_position_y = FIELD_HEIGHT/2;
-		ball_state = 0;
-		
-		// Place platforms at the center of the borders
+		ball_x = FIELD_WIDTH/2;
+		ball_y = FIELD_HEIGHT-1;
+		ball_direction = RIGHT_UP;
 		platform1_position = (FIELD_WIDTH-PLATFORM_WIDTH)/2; // central position
 		platform2_position = platform1_position;
-		
-		button1_state = 1'b0;
-		button2_state = 1'b0;
-		button3_state = 1'b0;
-		button4_state = 1'b0;
-		
-		h_counter = 0;
-		v_counter = 0;
-		
-		for (i = 0; i < FIELD_HEIGHT; i = i + 1)
-			for (j = 0; j< FIELD_WIDTH; j = j + 1)
-				field[i][j] = EMPTY_CELL;
-		
-		field[ball_position_y][ball_position_x] = BALL_CELL;
-			
-		num1_ = 7'b0000000;
-		num2_ = 7'b0000000;
-		num3_ = 7'b0000000;
-		num4_ = 7'b0000000;
-	
+		game_state = 1'b1;
 	end
-	
-	// Frequency divider (50 MHz to 25 MHz, needed for VGA)
-	always @ (posedge clk50MHz)
-	begin
-		clk25MHz_ = ~clk25MHz_;
-	end
-	
-	// VGA sync
-	always @ (posedge clk25MHz)
-	begin
-		if(h_counter == line)
-			h_counter <= 0;
-		else
-			h_counter <= (h_counter + 1);
-	end
-			
-	always @ (posedge clk25MHz)
-	begin
-		if (v_counter == frame)
-			v_counter <= 0;
-		else if (h_counter == line)
-			v_counter <= (v_counter + 1);
-	end
-		
+	endtask
 
-	
+	// Main logic
 	always @ (posedge clk25MHz)
 	begin
 				
+		// Processing button presses
+
 		if (button1 != button1_state)
 		begin
 			if (button1 == 1'b1)
 			begin
 				led_[7] = 1'b1;
 				led_[6] = 1'b1;
-				if (platform1_position > 0)
+				
+				if (game_state == 1'b0)
+					GameRestart;
+				else if (platform1_position > 0)
 					platform1_position = platform1_position - 1;
 			end
 			else
@@ -198,7 +47,10 @@ module Arkanoid
 			begin
 				led_[5] = 1'b1;
 				led_[4] = 1'b1;
-				if (platform1_position < FIELD_WIDTH-PLATFORM_WIDTH-1)
+				
+				if (game_state == 1'b0)
+					GameRestart;
+				else if (platform1_position < FIELD_WIDTH-PLATFORM_WIDTH-1)
 					platform1_position = platform1_position + 1;
 			end
 			else
@@ -215,7 +67,10 @@ module Arkanoid
 			begin
 				led_[3] = 1'b1;
 				led_[2] = 1'b1;
-				if (platform2_position > 0)
+				
+				if (game_state == 1'b0)
+					GameRestart;
+				else if (platform2_position > 0)
 					platform2_position = platform2_position - 1;
 			end
 			else
@@ -232,7 +87,10 @@ module Arkanoid
 			begin
 				led_[1] = 1'b1;
 				led_[0] = 1'b1;
-				if (platform2_position < FIELD_WIDTH-PLATFORM_WIDTH-1)
+				
+				if (game_state == 1'b0)
+					GameRestart;
+				else if (platform2_position < FIELD_WIDTH-PLATFORM_WIDTH-1)
 					platform2_position = platform2_position + 1;
 			end
 			else
@@ -241,9 +99,10 @@ module Arkanoid
 				led_[0] = 1'b0;
 			end 
 			button4_state = button4;
-		end		
+		end
 		
 		
+		// Update field (move platforms)
 		for (i = 0; i < FIELD_WIDTH; i = i + 1)
 		begin
 			if ((i >= platform2_position) && (i <= platform2_position+PLATFORM_WIDTH))
@@ -255,7 +114,184 @@ module Arkanoid
 				field[FIELD_HEIGHT-1][i] = PLATFORM_CELL;
 			else
 				field[FIELD_HEIGHT-1][i] = EMPTY_CELL;
-		end
+		end	
+		
+		
+		//Update field (move ball)
+		if (game_state)
+			if (ball_clock_counter < BALL_DELAY)
+				ball_clock_counter = ball_clock_counter + 1;
+			else
+			begin
+				ball_clock_counter = 0;
+				
+				field[ball_y][ball_x] = EMPTY_CELL;
+				
+				case (ball_direction)
+					
+					LEFT_UP:
+					begin
+					
+						if ((ball_x > 0) && (ball_y > 1))
+						begin
+							ball_x = ball_x - 1;
+							ball_y = ball_y - 1;
+						end
+						else if ((ball_x > 0) && (ball_y == 1))
+							if ((ball_x >= platform2_position) && (ball_x <= platform2_position + PLATFORM_WIDTH))
+							begin
+								ball_direction = LEFT_DOWN;
+								ball_x = ball_x - 1;
+								ball_y = ball_y + 1;
+							end
+							else
+							begin
+								// Goal
+								player1_score = player1_score + 1;
+								game_state = 1'b0;
+							end
+											
+						else if ((ball_x == 0) && (ball_y > 1))
+						begin
+							ball_direction = RIGHT_UP;
+							ball_x = ball_x + 1;
+							ball_y = ball_y - 1;
+						end
+						
+						else
+						begin
+							ball_direction = RIGHT_DOWN;
+							ball_x = ball_x + 1;
+							ball_y = ball_y + 1;
+						end
+
+					end
+					
+					RIGHT_UP:
+					begin
+					
+						if ((ball_x < FIELD_WIDTH-1) && (ball_y > 1))
+						begin
+							ball_x = ball_x + 1;
+							ball_y = ball_y - 1;
+						end
+						else if ((ball_x < FIELD_WIDTH-1) && (ball_y == 1))
+							if ((ball_x >= platform2_position) && (ball_x <= platform2_position + PLATFORM_WIDTH))
+							begin
+								ball_direction = RIGHT_DOWN;
+								ball_x = ball_x + 1;
+								ball_y = ball_y + 1;
+							end
+							else
+							begin
+								// Goal
+								player1_score = player1_score + 1;
+								game_state = 1'b0;
+							end
+											
+						else if ((ball_x == FIELD_WIDTH-1) && (ball_y > 1))
+						begin
+							ball_direction = LEFT_UP;
+							ball_x = ball_x - 1;
+							ball_y = ball_y - 1;
+						end
+						
+						else
+						begin
+							ball_direction = LEFT_DOWN;
+							ball_x = ball_x - 1;
+							ball_y = ball_y + 1;
+						end
+						
+					end
+					
+					LEFT_DOWN:
+					begin
+					
+						if ((ball_x > 0) && (ball_y < FIELD_HEIGHT-2))
+						begin
+							ball_x = ball_x - 1;
+							ball_y = ball_y + 1;
+						end
+						else if ((ball_x > 0) && (ball_y == FIELD_HEIGHT-2))
+							if ((ball_x >= platform1_position) && (ball_x <= platform1_position + PLATFORM_WIDTH))
+							begin
+								ball_direction = LEFT_UP;
+								ball_x = ball_x - 1;
+								ball_y = ball_y - 1;
+							end
+							else
+							begin
+								// Goal
+								player2_score = player2_score + 1;
+								game_state = 1'b0;
+							end
+											
+						else if ((ball_x == 0) && (ball_y < FIELD_HEIGHT-2))
+						begin
+							ball_direction = RIGHT_DOWN;
+							ball_x = ball_x + 1;
+							ball_y = ball_y + 1;
+						end
+						
+						else
+						begin
+							ball_direction = RIGHT_UP;
+							ball_x = ball_x + 1;
+							ball_y = ball_y - 1;
+						end
+									
+					end
+					
+					RIGHT_DOWN:
+					begin
+					
+						if ((ball_x < FIELD_WIDTH-1) && (ball_y < FIELD_HEIGHT-2))
+						begin
+							ball_x = ball_x + 1;
+							ball_y = ball_y + 1;
+						end
+						else if ((ball_x < FIELD_WIDTH-1) && (ball_y == FIELD_HEIGHT-2))
+							if ((ball_x >= platform1_position) && (ball_x <= platform1_position + PLATFORM_WIDTH))
+							begin
+								ball_direction = RIGHT_UP;
+								ball_x = ball_x + 1;
+								ball_y = ball_y - 1;
+							end
+							else
+							begin
+								// Goal
+								player2_score = player2_score + 1;
+								game_state = 1'b0;
+							end
+											
+						else if ((ball_x == FIELD_WIDTH-1) && (ball_y < FIELD_HEIGHT-2))
+						begin
+							ball_direction = LEFT_DOWN;
+							ball_x = ball_x - 1;
+							ball_y = ball_y + 1;
+						end
+						
+						else
+						begin
+							ball_direction = LEFT_UP;
+							ball_x = ball_x - 1;
+							ball_y = ball_y - 1;
+						end
+						
+					end
+					
+				endcase
+				
+				if (game_state)
+					field[ball_y][ball_x] = BALL_CELL;
+				
+			end
+		
+		
+		// Update scores
+		IntToDigital(player1_score, hex3_, hex2_);
+		IntToDigital(player2_score, hex1_, hex0_);
 		
 		
 		// VGA output
@@ -307,9 +343,45 @@ module Arkanoid
 		end
 		
 	end
-
-	assign clk25MHz = clk25MHz_;
 	
+	
+	// Initialization of all module variables
+	initial
+	begin
+		
+		game_state = 1'b0;
+		
+		// Reset scores
+		player1_score = 0;
+		player2_score = 0;
+		
+		// Place ball to the center of the screen
+		ball_clock_counter = 0;
+		ball_x = FIELD_WIDTH/2;
+		ball_y = FIELD_HEIGHT-1;
+		ball_direction = RIGHT_UP;
+		
+		// Place platforms at the center of the borders
+		platform1_position = (FIELD_WIDTH-PLATFORM_WIDTH)/2; // central position
+		platform2_position = platform1_position;
+		
+		// Clear field
+		for (i = 0; i < FIELD_HEIGHT; i = i + 1)
+			for (j = 0; j< FIELD_WIDTH; j = j + 1)
+				field[i][j] = EMPTY_CELL;
+		
+		// Reset buttons state
+		button1_state = 1'b0;
+		button2_state = 1'b0;
+		button3_state = 1'b0;
+		button4_state = 1'b0;
+				
+		// Reset VGA counters
+		h_counter = 0;
+		v_counter = 0;
+
+	end
+
 	assign h_sync = ~((h_counter > 0) && (h_counter < 95));
 	assign v_sync = ~((v_counter == 0) || (v_counter == 1));
 	
@@ -317,10 +389,11 @@ module Arkanoid
 	assign green = green_;
 	assign blue = blue_;
 	
-	assign led = led_;
-	assign num1 = num1_;
-	assign num2 = num2_;
-	assign num3 = num3_;
-	assign num4 = num4_;
+	assign hex0 = ~hex0_;
+	assign hex1 = ~hex1_;
+	assign hex2 = ~hex2_;
+	assign hex3 = ~hex3_;
+	
+	assign led = ~led_;	
 	
 endmodule

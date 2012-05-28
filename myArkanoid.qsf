@@ -52,35 +52,12 @@ set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC_FOR_AREA OFF
 set_global_assignment -name PHYSICAL_SYNTHESIS_MAP_LOGIC_TO_MEMORY_FOR_AREA OFF
 set_global_assignment -name STRATIX_CONFIGURATION_DEVICE AUTO
-set_location_assignment PIN_J2 -to led1[0]
-set_location_assignment PIN_J1 -to led1[1]
-set_location_assignment PIN_H2 -to led1[2]
-set_location_assignment PIN_H1 -to led1[3]
-set_location_assignment PIN_F2 -to led1[4]
-set_location_assignment PIN_F1 -to led1[5]
-set_location_assignment PIN_E2 -to led1[6]
-set_location_assignment PIN_E1 -to led2[0]
-set_location_assignment PIN_H6 -to led2[1]
-set_location_assignment PIN_H5 -to led2[2]
-set_location_assignment PIN_H4 -to led2[3]
-set_location_assignment PIN_G3 -to led2[4]
-set_location_assignment PIN_D2 -to led2[5]
-set_location_assignment PIN_D1 -to led2[6]
-set_location_assignment PIN_G5 -to led3[0]
-set_location_assignment PIN_G6 -to led3[1]
-set_location_assignment PIN_C2 -to led3[2]
-set_location_assignment PIN_C1 -to led3[3]
-set_location_assignment PIN_E3 -to led3[4]
-set_location_assignment PIN_E4 -to led3[5]
-set_location_assignment PIN_D3 -to led3[6]
-set_location_assignment PIN_F4 -to led4[0]
-set_location_assignment PIN_D5 -to led4[1]
-set_location_assignment PIN_D6 -to led4[2]
-set_location_assignment PIN_J4 -to led4[3]
-set_location_assignment PIN_L8 -to led4[4]
-set_location_assignment PIN_F3 -to led4[5]
-set_location_assignment PIN_D4 -to led4[6]
-set_global_assignment -name MISC_FILE "C:/Users/ProGOLD/Desktop/Политех/Altera DE1/myArkanoid/myArkanoid.dpf"
+set_location_assignment PIN_T21 -to button1
+set_location_assignment PIN_T22 -to button2
+set_location_assignment PIN_R21 -to button3
+set_location_assignment PIN_R22 -to button4
+set_location_assignment PIN_A11 -to h_sync
+set_location_assignment PIN_B11 -to v_sync
 set_location_assignment PIN_D9 -to red[0]
 set_location_assignment PIN_C9 -to red[1]
 set_location_assignment PIN_A7 -to red[2]
@@ -93,22 +70,34 @@ set_location_assignment PIN_A9 -to blue[0]
 set_location_assignment PIN_D11 -to blue[1]
 set_location_assignment PIN_A10 -to blue[2]
 set_location_assignment PIN_B10 -to blue[3]
-set_location_assignment PIN_T21 -to button1
-set_location_assignment PIN_T22 -to button2
-set_location_assignment PIN_R21 -to button3
-set_location_assignment PIN_R22 -to button4
-set_location_assignment PIN_A11 -to h_sync
-set_location_assignment PIN_B11 -to v_sync
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
-set_global_assignment -name MISC_FILE "C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.dpf"
-set_global_assignment -name BDF_FILE TotalScheme.bdf
-set_global_assignment -name VERILOG_FILE Arkanoid.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE myArkanoid.vwf
-set_global_assignment -name SIMULATION_MODE TIMING
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE myArkanoid.vwf
+set_location_assignment PIN_J2 -to hex0[0]
+set_location_assignment PIN_J1 -to hex0[1]
+set_location_assignment PIN_H2 -to hex0[2]
+set_location_assignment PIN_H1 -to hex0[3]
+set_location_assignment PIN_F2 -to hex0[4]
+set_location_assignment PIN_F1 -to hex0[5]
+set_location_assignment PIN_E2 -to hex0[6]
+set_location_assignment PIN_E1 -to hex1[0]
+set_location_assignment PIN_H6 -to hex1[1]
+set_location_assignment PIN_H5 -to hex1[2]
+set_location_assignment PIN_H4 -to hex1[3]
+set_location_assignment PIN_G3 -to hex1[4]
+set_location_assignment PIN_D2 -to hex1[5]
+set_location_assignment PIN_D1 -to hex1[6]
+set_location_assignment PIN_G5 -to hex2[0]
+set_location_assignment PIN_G6 -to hex2[1]
+set_location_assignment PIN_C2 -to hex2[2]
+set_location_assignment PIN_C1 -to hex2[3]
+set_location_assignment PIN_E3 -to hex2[4]
+set_location_assignment PIN_E4 -to hex2[5]
+set_location_assignment PIN_D3 -to hex2[6]
+set_location_assignment PIN_F4 -to hex3[0]
+set_location_assignment PIN_D5 -to hex3[1]
+set_location_assignment PIN_D6 -to hex3[2]
+set_location_assignment PIN_J4 -to hex3[3]
+set_location_assignment PIN_L8 -to hex3[4]
+set_location_assignment PIN_F3 -to hex3[5]
+set_location_assignment PIN_D4 -to hex3[6]
 set_location_assignment PIN_U22 -to led[0]
 set_location_assignment PIN_U21 -to led[1]
 set_location_assignment PIN_V22 -to led[2]
@@ -117,4 +106,20 @@ set_location_assignment PIN_W22 -to led[4]
 set_location_assignment PIN_W21 -to led[5]
 set_location_assignment PIN_Y22 -to led[6]
 set_location_assignment PIN_Y21 -to led[7]
+set_global_assignment -name MISC_FILE "C:/Users/ProGOLD/Desktop/Политех/Altera DE1/myArkanoid/myArkanoid.dpf"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name MISC_FILE "C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/myArkanoid.dpf"
+set_global_assignment -name SIMULATION_MODE TIMING
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE myArkanoid.vwf
+
+set_global_assignment -name VERILOG_FILE debouncer.v
+set_global_assignment -name BDF_FILE TotalScheme.bdf
+set_global_assignment -name VERILOG_FILE Arkanoid.v
+set_global_assignment -name VERILOG_FILE arkanoid_header.v
+set_global_assignment -name VERILOG_FILE int_to_digital.v
+set_global_assignment -name VERILOG_FILE vga_sync.v
+set_global_assignment -name VERILOG_FILE ClockDivider.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

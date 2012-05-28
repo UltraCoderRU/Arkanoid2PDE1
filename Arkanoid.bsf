@@ -26,8 +26,8 @@ applicable agreement for further details.
 	(port
 		(pt 0 32)
 		(input)
-		(text "clk50MHz" (rect 0 0 47 12)(font "Arial" ))
-		(text "clk50MHz" (rect 21 27 68 39)(font "Arial" ))
+		(text "clk25MHz" (rect 0 0 47 12)(font "Arial" ))
+		(text "clk25MHz" (rect 21 27 68 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
@@ -96,29 +96,29 @@ applicable agreement for further details.
 	(port
 		(pt 152 112)
 		(output)
-		(text "num1[6..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "num1[6..0]" (rect 78 107 131 119)(font "Arial" ))
+		(text "hex0[6..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "hex0[6..0]" (rect 82 107 131 119)(font "Arial" ))
 		(line (pt 152 112)(pt 136 112)(line_width 3))
 	)
 	(port
 		(pt 152 128)
 		(output)
-		(text "num2[6..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "num2[6..0]" (rect 78 123 131 135)(font "Arial" ))
+		(text "hex1[6..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "hex1[6..0]" (rect 82 123 131 135)(font "Arial" ))
 		(line (pt 152 128)(pt 136 128)(line_width 3))
 	)
 	(port
 		(pt 152 144)
 		(output)
-		(text "num3[6..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "num3[6..0]" (rect 78 139 131 151)(font "Arial" ))
+		(text "hex2[6..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "hex2[6..0]" (rect 82 139 131 151)(font "Arial" ))
 		(line (pt 152 144)(pt 136 144)(line_width 3))
 	)
 	(port
 		(pt 152 160)
 		(output)
-		(text "num4[6..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "num4[6..0]" (rect 78 155 131 167)(font "Arial" ))
+		(text "hex3[6..0]" (rect 0 0 49 12)(font "Arial" ))
+		(text "hex3[6..0]" (rect 82 155 131 167)(font "Arial" ))
 		(line (pt 152 160)(pt 136 160)(line_width 3))
 	)
 	(port
@@ -128,16 +128,6 @@ applicable agreement for further details.
 		(text "led[7..0]" (rect 91 171 131 183)(font "Arial" ))
 		(line (pt 152 176)(pt 136 176)(line_width 3))
 	)
-	(parameter
-		"SCREEN_WIDTH"
-		"640"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"SCREEN_HEIGHT"
-		"480"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"CELL_SIZE"
 		"20"
@@ -150,17 +140,12 @@ applicable agreement for further details.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"BALL_SPEED"
-		"2"
+		"1"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"PLATFORM_WIDTH"
-		"8"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"PLATFORM_SPEED"
-		"1"
+		"7"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter

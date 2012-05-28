@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C20F484) Path("C:/Users/ProGOLD/Desktop/Политех/Altera DE1/Arkanoid/") File("myArkanoid.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C20F484) Path("G:/Verilog/Arkanoid2PDE1/") File("myArkanoid.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

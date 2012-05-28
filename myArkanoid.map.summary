@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon May 21 19:54:20 2012
+Analysis & Synthesis Status : Successful - Mon May 28 14:21:58 2012
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : myArkanoid
 Top-level Entity Name : TotalScheme
 Family : Cyclone II
-Total logic elements : 1,810
-    Total combinational functions : 1,793
-    Dedicated logic registers : 151
-Total registers : 151
+Total logic elements : 7,146
+    Total combinational functions : 7,096
+    Dedicated logic registers : 1,086
+Total registers : 1086
 Total pins : 55
 Total virtual pins : 0
 Total memory bits : 0
