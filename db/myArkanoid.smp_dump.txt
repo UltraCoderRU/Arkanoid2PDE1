@@ -1,7 +1,0 @@
-
-State Machine - |TotalScheme|Arkanoid:inst|ball_direction
-Name ball_direction.RIGHT_DOWN ball_direction.LEFT_DOWN ball_direction.RIGHT_UP ball_direction.LEFT_UP 
-ball_direction.LEFT_UP 0 0 0 0 
-ball_direction.RIGHT_UP 0 0 1 1 
-ball_direction.LEFT_DOWN 0 1 0 1 
-ball_direction.RIGHT_DOWN 1 0 0 1 
