@@ -1,0 +1,9 @@
+db
+incremental_db
+undo_redo.txt
+*.done
+*.pof
+*.rpt
+*.smsg
+*.sof
+*.summary
